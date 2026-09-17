@@ -1,0 +1,12 @@
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+.streamlit/secrets.toml
+
+# Raw 80 MB registry snapshot and its gzip. The committed
+# static/wa_registered_models.csv holds every unique model derived from them.
+static/extract.csv
+static/extract.csv.gz

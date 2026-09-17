@@ -1,0 +1,5 @@
+-r requirements.txt
+pytest>=8.0
+# Optional: the browser smoke test is skipped when Playwright is not installed.
+playwright>=1.47
+pytest-playwright>=0.5

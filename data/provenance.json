@@ -1,0 +1,67 @@
+{
+  "epa_vehicles": {
+    "download_sha256": "c4979b13eeb97933a4d5e3ea6a3914639e5d7536b254af580b3661fb62d6d668",
+    "field_documentation_url": "https://www.fueleconomy.gov/feg/ws/index.shtml#vehicle",
+    "http_etag": "\"a116c36b8440dd1:0\"",
+    "http_last_modified": "Wed, 09 Sep 2026 17:55:37 GMT",
+    "license_note": "FuelEconomy.gov content may be freely distributed for noncommercial scientific and educational purposes. Review the current source terms before any commercial redistribution.",
+    "normalized_file": "data/epa_vehicles.csv",
+    "normalized_rows": 50242,
+    "powertrain_counts": {
+      "BEV": 1572,
+      "Gasoline": 43370,
+      "HEV": 1873,
+      "Other": 2980,
+      "PHEV": 447
+    },
+    "retrieved_at": "2026-09-17T12:54:45+00:00",
+    "source_name": "U.S. DOE / EPA FuelEconomy.gov vehicle dataset",
+    "source_rows": 50242,
+    "source_url": "https://www.fueleconomy.gov/feg/epadata/vehicles.csv.zip"
+  },
+  "sales_tax_rates": {
+    "download_sha256": "6ebf0d89536369ade2b346c82d8d655ec8bd6f9c5b8b1f1064b7ab3ed58089ee",
+    "effective_date": "January 1, 2026",
+    "http_etag": null,
+    "http_last_modified": null,
+    "limitation_note": "General sales-tax rates. Motor-vehicle rates, trade-in credits, caps, exemptions, and local ZIP-level rates are not encoded and must be reviewed against the buyer's jurisdiction.",
+    "normalized_file": "data/sales_tax_rates.csv",
+    "normalized_rows": 51,
+    "retrieved_at": "2026-09-17T12:54:49+00:00",
+    "source_name": "Tax Foundation, State and Local Sales Tax Rates",
+    "source_url": "https://taxfoundation.org/data/all/state/sales-tax-rates/"
+  },
+  "wa_registered_models": {
+    "derived_at": "2026-09-17T17:46:21+00:00",
+    "dropped_columns": [
+      "VIN (1-10)",
+      "DOL Vehicle ID",
+      "County",
+      "City",
+      "State",
+      "Postal Code",
+      "Legislative District",
+      "Vehicle Location",
+      "Electric Utility",
+      "2020 GEOID"
+    ],
+    "limitation_note": "One row per unique registered model configuration. Per-vehicle identifiers, counts, and locations are removed, so this file shows which models are registered in Washington and never how many. An electric range of 0 in the source means 'not researched' and is stored as unknown.",
+    "normalized_file": "static/wa_registered_models.csv",
+    "source_file": "extract.csv",
+    "source_name": "Washington State Department of Licensing, Electric Vehicle Population Data",
+    "source_rows": 294193,
+    "unique_models": 823
+  },
+  "zip_to_state": {
+    "download_sha256": "3ed41278d637dc249e0323306f68be8a6c234e3090f4de88ef328dee71aeaaaf",
+    "http_etag": null,
+    "http_last_modified": "Thu, 09 Dec 2021 16:27:40 GMT",
+    "limitation_note": "ZIP Code Tabulation Areas approximate USPS ZIP codes. ZIP codes with no residential delivery area have no ZCTA and cannot be mapped.",
+    "multi_state_zips": 137,
+    "normalized_file": "data/zip_to_state.csv",
+    "normalized_rows": 33791,
+    "retrieved_at": "2026-09-17T12:54:47+00:00",
+    "source_name": "U.S. Census Bureau 2020 ZCTA-to-county relationship file",
+    "source_url": "https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_county20_natl.txt"
+  }
+}

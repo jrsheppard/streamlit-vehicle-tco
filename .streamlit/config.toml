@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#0072B2"
+baseFontSize = 15
+
+[server]
+maxUploadSize = 10

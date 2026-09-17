@@ -1,0 +1,12 @@
+body_segment,description
+Small sedan,Compact and subcompact three-box sedans
+Midsize sedan,Midsize three-box sedans
+Large sedan,Full-size sedans
+Hatchback,Two-box hatchbacks and liftbacks
+Small SUV / crossover,Compact crossovers and small SUVs
+Midsize SUV,Two-row and three-row midsize SUVs
+Large SUV,Full-size body-on-frame and large three-row SUVs
+Pickup,"Compact, midsize, and full-size pickups"
+Minivan,Sliding-door passenger vans
+Sports / performance,"Performance coupes, roadsters, and high-output variants"
+Other / unclassified,Anything without an assigned segment
