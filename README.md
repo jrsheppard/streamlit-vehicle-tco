@@ -9,12 +9,28 @@ traces back to a visible formula and an editable assumption.
 
 ## Run it
 
+Python 3.11 or newer is required; the pinned Streamlit and pandas versions do not
+support 3.9 or 3.10.
+
 ```bash
 venv/bin/python -m pip install -r requirements.txt
 venv/bin/python -m streamlit run streamlit_app.py
 ```
 
 The app reads only local files. It never makes a network request at runtime.
+
+## Deploy on Streamlit Community Cloud
+
+The repository is deploy-ready: `streamlit_app.py` and `requirements.txt` are at
+the root and every data file the app needs is committed.
+
+1. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.
+2. Create an app from this repository, branch `main`, main file
+   `streamlit_app.py`.
+3. **In Advanced settings, set the Python version to 3.11 or newer.** The default
+   may be older, and the pinned dependencies will fail to install on it.
+
+No secrets are required.
 
 ## Project layout
 
