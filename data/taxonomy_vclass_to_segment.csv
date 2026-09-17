@@ -1,0 +1,21 @@
+epa_vclass,body_segment,aaa_category,notes
+Minicompact Cars,Sports / performance,Small Sedan,EPA classifies by interior volume; in 2025-2027 this class is almost entirely two-door exotics and roadsters.
+Subcompact Cars,Small sedan,Small Sedan,
+Compact Cars,Small sedan,Small Sedan,
+Midsize Cars,Midsize sedan,Medium Sedan,
+Large Cars,Large sedan,Medium Sedan,AAA publishes no large-sedan category; Medium Sedan is the closest published basis.
+Two Seaters,Sports / performance,Small Sedan,AAA publishes no sports-car category; Small Sedan is the closest published basis and the price model carries the cost difference.
+Small Station Wagons,Hatchback,Small Sedan,
+Midsize Station Wagons,Hatchback,Medium Sedan,
+Small Sport Utility Vehicle 2WD,Small SUV / crossover,Subcompact SUV,
+Small Sport Utility Vehicle 4WD,Small SUV / crossover,Compact SUV,
+Standard Sport Utility Vehicle 2WD,Midsize SUV,Medium SUV,
+Standard Sport Utility Vehicle 4WD,Midsize SUV,Medium SUV,"EPA's VClass does not separate full-size SUVs from midsize ones, so the Large SUV segment stays unused by this mapping."
+Minivan - 2WD,Minivan,Medium SUV,AAA publishes no minivan category; Medium SUV is the closest published basis.
+Minivan - 4WD,Minivan,Medium SUV,AAA publishes no minivan category; Medium SUV is the closest published basis.
+Small Pickup Trucks 2WD,Pickup,Midsize Pickup,
+Small Pickup Trucks 4WD,Pickup,Midsize Pickup,
+Standard Pickup Trucks 2WD,Pickup,Half-Ton Pickup,
+Standard Pickup Trucks 4WD,Pickup,Half-Ton Pickup,
+Special Purpose Vehicle 2WD,Other / unclassified,Compact SUV,
+Special Purpose Vehicle 4WD,Other / unclassified,Medium SUV,

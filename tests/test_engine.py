@@ -1,10 +1,14 @@
+from dataclasses import replace
+
 import pytest
 
 from tco.engine import (
+    MAINTENANCE_REFERENCE_MILES,
     GlobalAssumptions,
     VehicleAssumptions,
     components_reconcile,
     compute_tco,
+    scale_maintenance,
 )
 from tco.finance import acquisition_reconciles
 
@@ -199,3 +203,47 @@ def test_down_payment_above_the_purchase_price_is_rejected():
     assumptions = GlobalAssumptions(**{**GLOBALS.__dict__, "down_payment": 90_000})
     with pytest.raises(ValueError):
         compute_tco(GASOLINE_CAR, assumptions)
+
+
+# --------------------------------------------------------------------------- #
+# Maintenance scales with mileage
+# --------------------------------------------------------------------------- #
+def test_maintenance_is_unchanged_at_the_reference_mileage():
+    assert scale_maintenance(1_000, MAINTENANCE_REFERENCE_MILES) == pytest.approx(1_000)
+
+
+def test_only_the_variable_half_moves_with_mileage():
+    # Twice the reference mileage lifts maintenance by half, not by double.
+    doubled = scale_maintenance(1_000, MAINTENANCE_REFERENCE_MILES * 2)
+    assert doubled == pytest.approx(1_500)
+    # A vehicle that never moves still carries the time-based half.
+    assert scale_maintenance(1_000, 0) == pytest.approx(500)
+
+
+def test_maintenance_scaling_is_linear_in_mileage():
+    low = scale_maintenance(1_000, 10_000)
+    mid = scale_maintenance(1_000, 20_000)
+    high = scale_maintenance(1_000, 30_000)
+    assert mid - low == pytest.approx(high - mid)
+
+
+def test_driving_more_raises_the_maintenance_a_comparison_charges():
+    fewer = compute_tco(GASOLINE_CAR, GLOBALS)
+    more = compute_tco(
+        GASOLINE_CAR, replace(GLOBALS, annual_miles=GLOBALS.annual_miles * 2)
+    )
+    assert more.total_maintenance_cost > fewer.total_maintenance_cost
+    # Mileage must not leak into costs that do not depend on it.
+    assert more.total_insurance_cost == fewer.total_insurance_cost
+    assert more.total_registration_cost == fewer.total_registration_cost
+    assert more.depreciation == pytest.approx(fewer.depreciation)
+
+
+def test_the_yearly_table_reports_the_scaled_maintenance():
+    result = compute_tco(GASOLINE_CAR, replace(GLOBALS, annual_miles=30_000))
+    expected = scale_maintenance(GASOLINE_CAR.annual_maintenance, 30_000)
+    assert result.yearly["maintenance"].eq(expected).all()
+    assert result.total_maintenance_cost == pytest.approx(
+        expected * GLOBALS.ownership_years
+    )
+    assert components_reconcile(result)

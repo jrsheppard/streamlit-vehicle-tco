@@ -666,14 +666,19 @@ def build_field_provenance(
     if overrides is None or overrides.empty:
         return derived
     keys = ["vehicle_id", "field"]
+    # Only the vehicles in `merged` are being shown, so an override for any other
+    # vehicle must not be concatenated into the result.
+    scoped = overrides.loc[overrides["vehicle_id"].isin(set(derived["vehicle_id"]))]
+    if scoped.empty:
+        return derived
     trimmed = derived.merge(
-        overrides.loc[:, keys].drop_duplicates(),
+        scoped.loc[:, keys].drop_duplicates(),
         on=keys,
         how="left",
         indicator=True,
     )
     derived = derived.loc[(trimmed["_merge"] == "left_only").to_numpy()]
-    return pd.concat([derived, overrides], ignore_index=True).sort_values(
+    return pd.concat([derived, scoped], ignore_index=True).sort_values(
         keys
     ).reset_index(drop=True)
 

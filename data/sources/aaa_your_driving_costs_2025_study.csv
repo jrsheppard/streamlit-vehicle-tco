@@ -1,0 +1,12 @@
+key,value,units,source_page,notes
+average_sales_weighted_msrp_usd,38938,USD,factsheet-1,Average sales-weighted MSRP of the new cars in the 2025 study.
+overall_cost_per_year_usd,11577,USD per year,factsheet-1,Overall average cost to own and operate a new car in 2025 at 15000 mi/yr.
+ownership_years,5,years,factsheet-1,Costs are averaged over five years.
+ownership_miles,75000,miles,factsheet-1,Costs are averaged over 75000 miles.
+miles_per_year,15000,miles per year,brochure-1,Reference annual mileage for the headline ownership figures.
+loan_down_payment_fraction,0.15,fraction,factsheet-1,"Finance line is based on a 5-year loan with 15% down at the national average interest rate."
+loan_term_years,5,years,factsheet-1,Finance line is based on a 5-year loan.
+gasoline_price_usd_per_gal,3.151,USD per gallon,factsheet-1,Regular grade average for the 12 months ending 5/25.
+electricity_price_usd_per_kwh,0.167,USD per kWh,factsheet-1,Electric vehicle charging rate assumed by the study.
+models_per_category,5,count,factsheet-1,Each category averages five top-selling models.
+category_count,9,count,factsheet-1,Number of vehicle categories in the study.

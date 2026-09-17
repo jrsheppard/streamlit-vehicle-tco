@@ -31,6 +31,99 @@
     "source_name": "Tax Foundation, State and Local Sales Tax Rates",
     "source_url": "https://taxfoundation.org/data/all/state/sales-tax-rates/"
   },
+  "vehicle_cost_assumptions": {
+    "collapse_keys": [
+      "model_year",
+      "make",
+      "base_model",
+      "powertrain",
+      "drive"
+    ],
+    "derived_at": "2026-09-17T22:22:33+00:00",
+    "field_provenance_file": "data/field_provenance.csv",
+    "inputs": {
+      "aaa_costs_sha256": "d3f0aee7ac28aa596a5c236dc52729ab87c3acf64fb53859e9e6d89c9ae352fe",
+      "epa_vehicles_sha256": "29be8b5120419003eaca30d3bacd36ea3e0d10d4cf994cf083f0fe9188d904e4",
+      "price_anchors_sha256": "465cff40ae44efc124a69c698c56f7fea36c0f7d931294154118277be45fb527",
+      "sales_tax_rates_sha256": "81f5a01ba07b90a30eeab73626c16a930aaffa50cbd248f131062fe761439aed"
+    },
+    "limitation_note": "Purchase prices are modelled estimates, not quotes. Operating costs are published category averages scaled by price and are identical for every model in a segment and powertrain cell. Maintenance is stated at the study's 15,000 mi/yr basis; the engine rescales half of it to the annual mileage in use.",
+    "model_years": [
+      2025,
+      2026,
+      2027
+    ],
+    "normalized_file": "data/vehicle_cost_assumptions.csv",
+    "operating_cost_model": {
+      "implied_study_apr": 0.06389,
+      "log_intercept": {
+        "annual_depreciation_rate": -3.17818,
+        "annual_insurance_usd": 4.80724,
+        "annual_maintenance_usd": 7.38578,
+        "annual_registration_fees_usd": -4.53948
+      },
+      "national_sales_tax_rate": 0.06642,
+      "observations": 15,
+      "price_elasticity": {
+        "annual_depreciation_rate": 0.1247,
+        "annual_insurance_usd": 0.25198,
+        "annual_maintenance_usd": 0.0,
+        "annual_registration_fees_usd": 0.97038
+      },
+      "r_squared": {
+        "annual_depreciation_rate": 0.04912,
+        "annual_insurance_usd": 0.40958,
+        "annual_maintenance_usd": 0.0,
+        "annual_registration_fees_usd": 0.8846
+      },
+      "reference_miles_per_year": 15000,
+      "shrinkage_prior": 0.5
+    },
+    "operating_cost_source": {
+      "effective_date": "2025-09-16",
+      "source_name": "AAA Your Driving Costs 2025",
+      "source_url": "https://newsroom.aaa.com/wp-content/uploads/2025/09/AAA-Brochure-Your-Driving-Cost-9.2025.pdf"
+    },
+    "price_model": {
+      "anchor_price_max_usd": 608000.0,
+      "anchor_price_min_usd": 17190.0,
+      "anchors": 343,
+      "cv_folds": 5,
+      "cv_interval_coverage": 0.79883,
+      "cv_log_rmse": 0.19538,
+      "cv_mape": 0.14842,
+      "cv_median_absolute_percentage_error": 0.10525,
+      "cv_repeats": 4,
+      "interval_by_brand_tier": {
+        "Luxury": [
+          -0.25772,
+          0.27846
+        ],
+        "Mainstream": [
+          -0.20062,
+          0.15875
+        ],
+        "Premium": [
+          -0.18072,
+          0.22808
+        ],
+        "Ultra luxury": [
+          -0.45281,
+          0.62482
+        ],
+        "__global__": [
+          -0.23161,
+          0.22797
+        ]
+      },
+      "log_residual_high": 0.22797,
+      "log_residual_low": -0.23161,
+      "ridge_alpha": 1.77828
+    },
+    "rows": 1287,
+    "rows_with_price": 1144,
+    "source_name": "Derived cost layer for 2025-2027 EPA configurations"
+  },
   "wa_registered_models": {
     "derived_at": "2026-09-17T17:46:21+00:00",
     "dropped_columns": [

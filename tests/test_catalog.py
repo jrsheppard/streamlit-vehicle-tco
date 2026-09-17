@@ -4,6 +4,8 @@ import pytest
 from tco.assumptions import (
     ERROR,
     INCOMPLETE,
+    read_cost_assumptions,
+    read_field_provenance,
     build_vehicle_assumptions,
     comparison_readiness,
     merge_with_epa,
@@ -19,6 +21,7 @@ from tco.epa_catalog import (
     classify_powertrain,
     normalize_epa_vehicles,
 )
+from tco.paths import COST_ASSUMPTIONS_PATH, FIELD_PROVENANCE_PATH
 
 BASE_ROW = {
     "vehicle_id": "v1",
@@ -275,3 +278,35 @@ def test_overrides_replace_catalog_values():
     )
     assert vehicle.purchase_price == 21_000
     assert vehicle.mpg == 44.0
+
+
+# --------------------------------------------------------------------------- #
+# The generated catalog that ships with the app
+# --------------------------------------------------------------------------- #
+def test_the_generated_catalog_is_valid():
+    frame = read_cost_assumptions(COST_ASSUMPTIONS_PATH)
+    report = validate_catalog(frame)
+    assert report.is_valid, report.errors.to_string(index=False)
+    assert frame["vehicle_id"].is_unique
+    assert set(frame["model_year"].dropna().unique()) <= {2025, 2026, 2027}
+    assert set(frame["powertrain"].unique()) <= {BEV, PHEV, HEV, GASOLINE}
+
+
+def test_every_generated_row_is_either_ready_or_explains_itself():
+    frame = read_cost_assumptions(COST_ASSUMPTIONS_PATH)
+    priced = frame["purchase_price_usd"].notna()
+    # A row without a price must say why, and must carry no operating costs
+    # either, so nothing downstream mistakes a partial row for a complete one.
+    assert frame.loc[~priced, "notes"].str.contains("No price published").all()
+    assert frame.loc[~priced, "annual_depreciation_rate"].isna().all()
+    assert frame.loc[priced, "annual_insurance_usd"].notna().all()
+    assert priced.mean() > 0.80
+
+
+def test_the_generated_catalog_carries_field_level_provenance():
+    frame = read_cost_assumptions(COST_ASSUMPTIONS_PATH)
+    provenance = read_field_provenance(FIELD_PROVENANCE_PATH)
+    assert set(provenance["vehicle_id"]) == set(frame["vehicle_id"])
+    assert provenance["source_name"].notna().all()
+    aaa = provenance[provenance["field"] == "annual_insurance_usd"]
+    assert aaa["source_url"].str.startswith("https://").all()

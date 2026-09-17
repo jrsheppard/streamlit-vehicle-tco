@@ -23,6 +23,20 @@ from tco.finance import FinancingResult, compute_financing, monthly_payment
 
 TOLERANCE = 0.01
 
+#: Annual mileage the catalog's maintenance figures are stated at.
+MAINTENANCE_REFERENCE_MILES = 15_000.0
+#: Share of maintenance that does not move with mileage. Service intervals are
+#: partly time-based and partly distance-based, so only half is rescaled.
+MAINTENANCE_FIXED_SHARE = 0.50
+
+
+def scale_maintenance(annual_maintenance: float, annual_miles: float) -> float:
+    """Restate a 15,000 mi/yr maintenance figure at the mileage actually driven."""
+    variable = (1.0 - MAINTENANCE_FIXED_SHARE) * (
+        annual_miles / MAINTENANCE_REFERENCE_MILES
+    )
+    return annual_maintenance * (MAINTENANCE_FIXED_SHARE + variable)
+
 
 @dataclass(frozen=True)
 class GlobalAssumptions:
@@ -190,6 +204,9 @@ def compute_tco(
 
     annual_insurance = vehicle.annual_insurance
     annual_registration = vehicle.annual_registration_fees
+    annual_maintenance = scale_maintenance(
+        vehicle.annual_maintenance, assumptions.annual_miles
+    )
     if assumptions.insurance_and_fees_override is not None:
         total_override = float(assumptions.insurance_and_fees_override)
         if total_override < 0:
@@ -242,7 +259,7 @@ def compute_tco(
         )
 
     total_energy = energy.total_cost * years
-    total_maintenance = vehicle.annual_maintenance * years
+    total_maintenance = annual_maintenance * years
     total_insurance = annual_insurance * years
     total_registration = annual_registration * years
 
@@ -294,7 +311,7 @@ def compute_tco(
 
     annual_operating = (
         energy.total_cost
-        + vehicle.annual_maintenance
+        + annual_maintenance
         + annual_insurance
         + annual_registration
     )
@@ -317,7 +334,7 @@ def compute_tco(
                 "depreciation": depreciation_year,
                 "financing_interest": interest_year,
                 "energy": energy.total_cost,
-                "maintenance": vehicle.annual_maintenance,
+                "maintenance": annual_maintenance,
                 "insurance": annual_insurance,
                 "registration_and_fees": annual_registration,
                 "sales_tax_and_purchase_fees": one_time,

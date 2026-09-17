@@ -23,6 +23,8 @@ from tco.assumptions import (
 )
 from tco.energy import EnergyInputError
 from tco.engine import (
+    MAINTENANCE_FIXED_SHARE,
+    MAINTENANCE_REFERENCE_MILES,
     GlobalAssumptions,
     components_reconcile,
     compute_tco,
@@ -81,9 +83,12 @@ st.title("Vehicle total cost of ownership")
 st.caption(
     "Compare battery electric, plug-in hybrid, conventional hybrid, and gasoline "
     "vehicles on transparent, editable assumptions. Specifications come from the "
-    "U.S. DOE and EPA FuelEconomy.gov catalog; the Washington State registry is "
-    "optional regional context only. This is a decision-support calculator, not "
-    "financial advice."
+    "U.S. DOE and EPA FuelEconomy.gov catalog. Purchase prices and operating "
+    "costs are statistical estimates, not quotes: prices come from a model fitted "
+    "to published manufacturer MSRPs, and depreciation, maintenance, insurance "
+    "and registration come from AAA's published category averages. Every figure "
+    "is editable and carries its source in the provenance tab. This is a "
+    "decision-support calculator, not financial advice."
 )
 
 # --------------------------------------------------------------------------- #
@@ -378,20 +383,29 @@ if dropped:
     )
 
 if not st.session_state.shortlist_initialized and available_ids:
-    seen: set[str] = set()
     default: list[str] = []
-    for _, candidate in ready.iterrows():
-        if candidate["powertrain"] not in seen:
-            seen.add(candidate["powertrain"])
-            default.append(candidate["vehicle_id"])
-        if len(default) == DEFAULT_SHORTLIST_SIZE:
+    for powertrain in SUPPORTED_POWERTRAINS:
+        if len(default) >= DEFAULT_SHORTLIST_SIZE:
             break
+        group = ready[ready["powertrain"] == powertrain]
+        if group.empty:
+            continue
+        # Prefer a mainstream brand so the opening comparison is relatable, and
+        # within it the median-priced model rather than whichever make happens
+        # to sort first alphabetically.
+        mainstream = group[group["brand_group"].str.startswith("Mainstream")]
+        if not mainstream.empty:
+            group = mainstream
+        distance = (
+            group["purchase_price_usd"] - group["purchase_price_usd"].median()
+        ).abs()
+        default.append(str(group.loc[distance.idxmin(), "vehicle_id"]))
     for vehicle_id in available_ids:
         if len(default) >= DEFAULT_SHORTLIST_SIZE:
             break
         if vehicle_id not in default:
             default.append(vehicle_id)
-    st.session_state.shortlist = default
+    st.session_state.shortlist = default[:DEFAULT_SHORTLIST_SIZE]
     st.session_state.shortlist_initialized = True
 
 shortlist = st.multiselect(
@@ -400,17 +414,20 @@ shortlist = st.multiselect(
     format_func=lambda item: label_by_id.get(item, item),
     max_selections=MAX_SHORTLIST,
     key="shortlist",
+    help=f"{len(available_ids):,} vehicles match the current filters. Type to search.",
 )
 
 incomplete = filtered[~filtered["comparison_ready"]]
 if not incomplete.empty:
     st.caption(
-        f"{len(incomplete)} matching vehicle(s) are not comparison-ready yet: "
+        f"{len(incomplete):,} matching vehicle(s) are not comparison-ready: "
         + "; ".join(
             f"{row.vehicle_label} ({row.readiness_note})"
             for row in incomplete.head(5).itertuples()
         )
-        + ". Add the missing values in the assumptions workspace."
+        + ". Most are vehicles the price model declined to estimate because too "
+        "few comparable MSRPs were available. Enter the missing values in the "
+        "assumptions workspace to compare them."
     )
 
 if not shortlist:
@@ -749,7 +766,13 @@ if override_panel.open:
                         "Depreciation rate (0-1)", min_value=0.0, max_value=1.0
                     ),
                     "annual_maintenance_usd": st.column_config.NumberColumn(
-                        "Maintenance ($/yr)", min_value=0.0, format="$%.0f"
+                        "Maintenance ($/yr at 15,000 mi)",
+                        min_value=0.0,
+                        format="$%.0f",
+                        help=(
+                            "Stated at 15,000 mi/yr. Half of it is rescaled to the "
+                            "annual mileage in the sidebar."
+                        ),
                     ),
                     "annual_insurance_usd": st.column_config.NumberColumn(
                         "Insurance ($/yr)", min_value=0.0, format="$%.0f"
@@ -1172,18 +1195,34 @@ A resale override replaces the formula result and is capped between $0 and the
 purchase price. Resale value sits inside depreciation and is never subtracted a
 second time.
 
+**Maintenance**
+
+```text
+annual maintenance = catalog value x ({MAINTENANCE_FIXED_SHARE:.2f} + {1 - MAINTENANCE_FIXED_SHARE:.2f} x annual miles / {MAINTENANCE_REFERENCE_MILES:,.0f})
+```
+
+Catalog maintenance is stated at the {MAINTENANCE_REFERENCE_MILES:,.0f} mi/yr basis AAA
+publishes. Service intervals are partly time-based and partly distance-based, so
+half of the figure is held fixed and half scales with the miles actually driven.
+Insurance, registration, and depreciation do not scale with mileage.
+
 **Fractional years** - the ownership period is constrained to whole years, so
 every annual figure covers a complete year.
 
 **Caveats**
 
-- Cost assumptions labeled *Illustrative default* are editable placeholders, not
-  verified market data. FuelEconomy.gov supplies no price, maintenance,
-  insurance, depreciation, or resale values.
+- Purchase prices are modelled estimates from a regression fitted to published
+  manufacturer MSRPs, not quotes. Each carries an 80% prediction interval shown
+  in the provenance tab, and a vehicle whose interval was too wide is published
+  with no price rather than an invented one.
+- Depreciation, maintenance, insurance, and registration come from AAA's
+  published category averages. They depend on body segment, powertrain, and
+  price only, so every model in a segment shares them; they are not
+  model-specific figures.
 - The sales-tax rate is a general sales-tax estimate for the mapped state. It is
   not a motor-vehicle tax determination and not a ZIP-exact combined rate.
-- No depreciation, maintenance, insurance, or resale model is fitted to data.
-  Every estimate here is a transparent, editable rule.
+- Every derived value is editable, and overriding one replaces the model for
+  that vehicle.
 """
         )
         reconciled = all(components_reconcile(result) for result in results)

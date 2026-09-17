@@ -1,0 +1,344 @@
+model_year,make,base_model,powertrain,drive,trim,msrp_usd,source_name,source_url,effective_date,notes
+2025,Toyota,Corolla,Gasoline,Front-Wheel Drive,LE,22325,Toyota USA,https://www.toyota.com/corolla/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Corolla,HEV,Front-Wheel Drive,Hybrid LE,23825,Toyota USA,https://www.toyota.com/corollahybrid/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Corolla,HEV,All-Wheel Drive,Hybrid LE AWD,25225,Toyota USA,https://www.toyota.com/corollahybrid/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Corolla Cross,Gasoline,Front-Wheel Drive,L,24435,Toyota USA,https://www.toyota.com/corollacross/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Corolla Cross,HEV,All-Wheel Drive,Hybrid S,29350,Toyota USA,https://www.toyota.com/corollacrosshybrid/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Camry,HEV,Front-Wheel Drive,LE,28400,Toyota USA,https://www.toyota.com/camry/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Camry,HEV,All-Wheel Drive,LE AWD,29825,Toyota USA,https://www.toyota.com/camry/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Prius,HEV,Front-Wheel Drive,LE,28350,Toyota USA,https://www.toyota.com/prius/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Prius,PHEV,Front-Wheel Drive,Plug-in SE,33375,Toyota USA,https://www.toyota.com/priusplugin/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,RAV4,Gasoline,Front-Wheel Drive,LE,28850,Toyota USA,https://www.toyota.com/rav4/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,RAV4,Gasoline,All-Wheel Drive,LE AWD,30250,Toyota USA,https://www.toyota.com/rav4/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,RAV4,HEV,All-Wheel Drive,Hybrid LE,32300,Toyota USA,https://www.toyota.com/rav4hybrid/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,RAV4,PHEV,All-Wheel Drive,Plug-in SE,44265,Toyota USA,https://www.toyota.com/rav4plugin/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Highlander,Gasoline,Front-Wheel Drive,LE,39520,Toyota USA,https://www.toyota.com/highlander/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Highlander,HEV,All-Wheel Drive,Hybrid LE AWD,44465,Toyota USA,https://www.toyota.com/highlanderhybrid/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Grand Highlander,Gasoline,Front-Wheel Drive,XLE,43070,Toyota USA,https://www.toyota.com/grandhighlander/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Grand Highlander,HEV,All-Wheel Drive,Hybrid XLE AWD,47450,Toyota USA,https://www.toyota.com/grandhighlander/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,4Runner,Gasoline,Rear-Wheel Drive,SR5,40770,Toyota USA,https://www.toyota.com/4runner/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,4Runner,HEV,4-Wheel Drive,TRD Off-Road i-FORCE MAX,54070,Toyota USA,https://www.toyota.com/4runner/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Tacoma,Gasoline,Rear-Wheel Drive,SR,31590,Toyota USA,https://www.toyota.com/tacoma/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Tacoma,HEV,4-Wheel Drive,TRD Sport i-FORCE MAX,47850,Toyota USA,https://www.toyota.com/tacoma/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Tundra,Gasoline,Rear-Wheel Drive,SR,39970,Toyota USA,https://www.toyota.com/tundra/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Tundra,HEV,Part-time 4-Wheel Drive,Limited i-FORCE MAX,59000,Toyota USA,https://www.toyota.com/tundra/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Sienna,HEV,Front-Wheel Drive,LE,39185,Toyota USA,https://www.toyota.com/sienna/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Sequoia,HEV,Rear-Wheel Drive,SR5,62125,Toyota USA,https://www.toyota.com/sequoia/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Land Cruiser,HEV,4-Wheel Drive,1958,56450,Toyota USA,https://www.toyota.com/landcruiser/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,bZ4X,BEV,Front-Wheel Drive,XLE,37070,Toyota USA,https://www.toyota.com/bz4x/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,bZ4X,BEV,All-Wheel Drive,XLE AWD,41200,Toyota USA,https://www.toyota.com/bz4x/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,GR 86,Gasoline,Rear-Wheel Drive,Base,31135,Toyota USA,https://www.toyota.com/gr86/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,GR Supra,Gasoline,Rear-Wheel Drive,3.0,56500,Toyota USA,https://www.toyota.com/grsupra/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Crown,HEV,All-Wheel Drive,XLE,41440,Toyota USA,https://www.toyota.com/crown/,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Crown Signia,HEV,All-Wheel Drive,XLE,43590,Toyota USA,https://www.toyota.com/crownsignia/,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,Civic,Gasoline,Front-Wheel Drive,LX,24250,Honda USA,https://automobiles.honda.com/civic-sedan,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,Civic,HEV,Front-Wheel Drive,Sport Hybrid,28750,Honda USA,https://automobiles.honda.com/civic-sedan,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,Accord,Gasoline,Front-Wheel Drive,LX,28990,Honda USA,https://automobiles.honda.com/accord-sedan,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,Accord,HEV,Front-Wheel Drive,Sport Hybrid,33655,Honda USA,https://automobiles.honda.com/accord-sedan,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,CR-V,Gasoline,Front-Wheel Drive,LX,30100,Honda USA,https://automobiles.honda.com/cr-v,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,CR-V,Gasoline,All-Wheel Drive,LX AWD,31600,Honda USA,https://automobiles.honda.com/cr-v,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,CR-V,HEV,All-Wheel Drive,Sport Hybrid AWD,35700,Honda USA,https://automobiles.honda.com/cr-v-hybrid,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,HR-V,Gasoline,Front-Wheel Drive,LX,26450,Honda USA,https://automobiles.honda.com/hr-v,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,HR-V,Gasoline,All-Wheel Drive,LX AWD,27950,Honda USA,https://automobiles.honda.com/hr-v,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,Pilot,Gasoline,Front-Wheel Drive,Sport,40200,Honda USA,https://automobiles.honda.com/pilot,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,Passport,Gasoline,All-Wheel Drive,RTL,43295,Honda USA,https://automobiles.honda.com/passport,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,Odyssey,Gasoline,Front-Wheel Drive,EX,42220,Honda USA,https://automobiles.honda.com/odyssey,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,Ridgeline,Gasoline,All-Wheel Drive,Sport,40150,Honda USA,https://automobiles.honda.com/ridgeline,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,Prologue,BEV,Front-Wheel Drive,EX,47400,Honda USA,https://automobiles.honda.com/prologue,2025-01-01,Base trim MSRP excluding destination
+2025,Honda,Prologue,BEV,All-Wheel Drive,EX AWD,50400,Honda USA,https://automobiles.honda.com/prologue,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Elantra,Gasoline,Front-Wheel Drive,SE,22125,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/elantra,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Elantra,HEV,Front-Wheel Drive,Hybrid Blue,26250,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/elantra-hybrid,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Sonata,Gasoline,Front-Wheel Drive,SE,27400,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/sonata,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Sonata,HEV,Front-Wheel Drive,Hybrid Blue,31950,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/sonata-hybrid,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Venue,Gasoline,Front-Wheel Drive,SE,20200,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/venue,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Kona,Gasoline,Front-Wheel Drive,SE,25100,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/kona,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Kona,BEV,Front-Wheel Drive,Electric SE,32675,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/kona-electric,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Tucson,Gasoline,Front-Wheel Drive,SE,28605,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/tucson,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Tucson,HEV,All-Wheel Drive,Hybrid Blue,33625,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/tucson-hybrid,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Tucson,PHEV,All-Wheel Drive,Plug-in Hybrid SEL,40975,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/tucson-plug-in-hybrid,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Santa Fe,Gasoline,Front-Wheel Drive,SE,34300,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/santa-fe,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Santa Fe,HEV,All-Wheel Drive,Hybrid SEL,39800,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/santa-fe-hybrid,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Palisade,Gasoline,Front-Wheel Drive,SE,38100,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/palisade,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Santa Cruz,Gasoline,Front-Wheel Drive,SE,29000,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/santa-cruz,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Ioniq 5,BEV,Rear-Wheel Drive,SE,42600,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/ioniq-5,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Ioniq 5,BEV,All-Wheel Drive,SE AWD,46550,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/ioniq-5,2025-01-01,Base trim MSRP excluding destination
+2025,Hyundai,Ioniq 6,BEV,Rear-Wheel Drive,SE,37850,Hyundai USA,https://www.hyundaiusa.com/us/en/vehicles/ioniq-6,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,K4,Gasoline,Front-Wheel Drive,LX,21990,Kia USA,https://www.kia.com/us/en/k4,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,K5,Gasoline,Front-Wheel Drive,LXS,27015,Kia USA,https://www.kia.com/us/en/k5,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,Soul,Gasoline,Front-Wheel Drive,LX,21885,Kia USA,https://www.kia.com/us/en/soul,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,Seltos,Gasoline,Front-Wheel Drive,LX,24950,Kia USA,https://www.kia.com/us/en/seltos,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,Sportage,Gasoline,Front-Wheel Drive,LX,28115,Kia USA,https://www.kia.com/us/en/sportage,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,Sportage,HEV,Front-Wheel Drive,Hybrid LX,30190,Kia USA,https://www.kia.com/us/en/sportage-hybrid,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,Sportage,PHEV,All-Wheel Drive,Plug-in Hybrid X-Line,40365,Kia USA,https://www.kia.com/us/en/sportage-plug-in-hybrid,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,Sorento,Gasoline,Front-Wheel Drive,LX,31990,Kia USA,https://www.kia.com/us/en/sorento,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,Sorento,HEV,Front-Wheel Drive,Hybrid EX,38790,Kia USA,https://www.kia.com/us/en/sorento-hybrid,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,Sorento,PHEV,All-Wheel Drive,Plug-in Hybrid EX,50890,Kia USA,https://www.kia.com/us/en/sorento-plug-in-hybrid,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,Telluride,Gasoline,Front-Wheel Drive,LX,37255,Kia USA,https://www.kia.com/us/en/telluride,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,Carnival,Gasoline,Front-Wheel Drive,LX,36800,Kia USA,https://www.kia.com/us/en/carnival,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,Carnival,HEV,Front-Wheel Drive,Hybrid LXS,41200,Kia USA,https://www.kia.com/us/en/carnival-hybrid,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,Niro,HEV,Front-Wheel Drive,LX,27785,Kia USA,https://www.kia.com/us/en/niro,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,Niro,PHEV,Front-Wheel Drive,Plug-in Hybrid EX,35115,Kia USA,https://www.kia.com/us/en/niro-plug-in-hybrid,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,Niro,BEV,Front-Wheel Drive,EV Wind,39600,Kia USA,https://www.kia.com/us/en/niro-ev,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,EV6,BEV,Rear-Wheel Drive,Light Long Range,42900,Kia USA,https://www.kia.com/us/en/ev6,2025-01-01,Base trim MSRP excluding destination
+2025,Kia,EV9,BEV,Rear-Wheel Drive,Light Long Range,54900,Kia USA,https://www.kia.com/us/en/ev9,2025-01-01,Base trim MSRP excluding destination
+2025,Nissan,Versa,Gasoline,Front-Wheel Drive,S,17190,Nissan USA,https://www.nissanusa.com/vehicles/cars/versa.html,2025-01-01,Base trim MSRP excluding destination
+2025,Nissan,Sentra,Gasoline,Front-Wheel Drive,S,21590,Nissan USA,https://www.nissanusa.com/vehicles/cars/sentra.html,2025-01-01,Base trim MSRP excluding destination
+2025,Nissan,Altima,Gasoline,Front-Wheel Drive,S,26370,Nissan USA,https://www.nissanusa.com/vehicles/cars/altima.html,2025-01-01,Base trim MSRP excluding destination
+2025,Nissan,Kicks,Gasoline,Front-Wheel Drive,S,21830,Nissan USA,https://www.nissanusa.com/vehicles/crossovers-suvs/kicks.html,2025-01-01,Base trim MSRP excluding destination
+2025,Nissan,Rogue,Gasoline,Front-Wheel Drive,S,28850,Nissan USA,https://www.nissanusa.com/vehicles/crossovers-suvs/rogue.html,2025-01-01,Base trim MSRP excluding destination
+2025,Nissan,Murano,Gasoline,Front-Wheel Drive,SV,40200,Nissan USA,https://www.nissanusa.com/vehicles/crossovers-suvs/murano.html,2025-01-01,Base trim MSRP excluding destination
+2025,Nissan,Pathfinder,Gasoline,Front-Wheel Drive,S,36900,Nissan USA,https://www.nissanusa.com/vehicles/crossovers-suvs/pathfinder.html,2025-01-01,Base trim MSRP excluding destination
+2025,Nissan,Armada,Gasoline,Rear-Wheel Drive,SV,58530,Nissan USA,https://www.nissanusa.com/vehicles/crossovers-suvs/armada.html,2025-01-01,Base trim MSRP excluding destination
+2025,Nissan,Frontier,Gasoline,Rear-Wheel Drive,S,32050,Nissan USA,https://www.nissanusa.com/vehicles/trucks/frontier.html,2025-01-01,Base trim MSRP excluding destination
+2025,Nissan,LEAF,BEV,Front-Wheel Drive,S,28140,Nissan USA,https://www.nissanusa.com/vehicles/electric-cars/leaf.html,2025-01-01,Base trim MSRP excluding destination
+2025,Nissan,ARIYA,BEV,Front-Wheel Drive,Engage,39770,Nissan USA,https://www.nissanusa.com/vehicles/electric-cars/ariya.html,2025-01-01,Base trim MSRP excluding destination
+2025,Nissan,Z,Gasoline,Rear-Wheel Drive,Sport,43970,Nissan USA,https://www.nissanusa.com/vehicles/sports-cars/z.html,2025-01-01,Base trim MSRP excluding destination
+2025,Mazda,3,Gasoline,Front-Wheel Drive,2.5 S,24150,Mazda USA,https://www.mazdausa.com/vehicles/mazda3-sedan,2025-01-01,Base trim MSRP excluding destination
+2025,Mazda,CX-30,Gasoline,4-Wheel Drive,2.5 S,25190,Mazda USA,https://www.mazdausa.com/vehicles/cx-30,2025-01-01,Base trim MSRP excluding destination
+2025,Mazda,CX-5,Gasoline,4-Wheel Drive,2.5 S,29300,Mazda USA,https://www.mazdausa.com/vehicles/cx-5,2025-01-01,Base trim MSRP excluding destination
+2025,Mazda,CX-50,Gasoline,4-Wheel Drive,2.5 S,30300,Mazda USA,https://www.mazdausa.com/vehicles/cx-50,2025-01-01,Base trim MSRP excluding destination
+2025,Mazda,CX-50,HEV,4-Wheel Drive,Hybrid Preferred,34150,Mazda USA,https://www.mazdausa.com/vehicles/cx-50-hybrid,2025-01-01,Base trim MSRP excluding destination
+2025,Mazda,CX-70,HEV,4-Wheel Drive,3.3 Turbo Preferred,40445,Mazda USA,https://www.mazdausa.com/vehicles/cx-70,2025-01-01,Base trim MSRP excluding destination
+2025,Mazda,CX-70,PHEV,4-Wheel Drive,PHEV Premium,54400,Mazda USA,https://www.mazdausa.com/vehicles/cx-70,2025-01-01,Base trim MSRP excluding destination
+2025,Mazda,CX-90,HEV,4-Wheel Drive,3.3 Turbo Select,38045,Mazda USA,https://www.mazdausa.com/vehicles/cx-90,2025-01-01,Base trim MSRP excluding destination
+2025,Mazda,CX-90,PHEV,4-Wheel Drive,PHEV Preferred,49945,Mazda USA,https://www.mazdausa.com/vehicles/cx-90,2025-01-01,Base trim MSRP excluding destination
+2025,Mazda,MX-5,Gasoline,Rear-Wheel Drive,Sport,29530,Mazda USA,https://www.mazdausa.com/vehicles/mx-5-miata,2025-01-01,Base trim MSRP excluding destination
+2025,Subaru,Impreza,Gasoline,All-Wheel Drive,Base,23495,Subaru of America,https://www.subaru.com/vehicles/impreza,2025-01-01,Base trim MSRP excluding destination
+2025,Subaru,Legacy,Gasoline,All-Wheel Drive,Base,25410,Subaru of America,https://www.subaru.com/vehicles/legacy,2025-01-01,Base trim MSRP excluding destination
+2025,Subaru,Crosstrek,Gasoline,All-Wheel Drive,Base,26295,Subaru of America,https://www.subaru.com/vehicles/crosstrek,2025-01-01,Base trim MSRP excluding destination
+2025,Subaru,Forester,Gasoline,All-Wheel Drive,Base,29695,Subaru of America,https://www.subaru.com/vehicles/forester,2025-01-01,Base trim MSRP excluding destination
+2025,Subaru,Forester,HEV,All-Wheel Drive,Hybrid Premium,34995,Subaru of America,https://www.subaru.com/vehicles/forester-hybrid,2025-01-01,Base trim MSRP excluding destination
+2025,Subaru,Outback,Gasoline,All-Wheel Drive,Base,30290,Subaru of America,https://www.subaru.com/vehicles/outback,2025-01-01,Base trim MSRP excluding destination
+2025,Subaru,Ascent,Gasoline,All-Wheel Drive,Base,36000,Subaru of America,https://www.subaru.com/vehicles/ascent,2025-01-01,Base trim MSRP excluding destination
+2025,Subaru,BRZ,Gasoline,Rear-Wheel Drive,Premium,31135,Subaru of America,https://www.subaru.com/vehicles/brz,2025-01-01,Base trim MSRP excluding destination
+2025,Subaru,WRX,Gasoline,All-Wheel Drive,Base,33855,Subaru of America,https://www.subaru.com/vehicles/wrx,2025-01-01,Base trim MSRP excluding destination
+2025,Subaru,Solterra,BEV,All-Wheel Drive,Premium,44995,Subaru of America,https://www.subaru.com/vehicles/solterra,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Trax,Gasoline,Front-Wheel Drive,LS,20400,Chevrolet USA,https://www.chevrolet.com/suvs/trax,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Trailblazer,Gasoline,Front-Wheel Drive,LS,23100,Chevrolet USA,https://www.chevrolet.com/suvs/trailblazer,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Malibu,Gasoline,Front-Wheel Drive,LS,25100,Chevrolet USA,https://www.chevrolet.com/cars/malibu,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Equinox,Gasoline,Front-Wheel Drive,LT,28600,Chevrolet USA,https://www.chevrolet.com/suvs/equinox,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Equinox,BEV,Front-Wheel Drive,EV LT,34995,Chevrolet USA,https://www.chevrolet.com/electric/equinox-ev,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Blazer,Gasoline,Front-Wheel Drive,LT,36800,Chevrolet USA,https://www.chevrolet.com/suvs/blazer,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Blazer,BEV,Front-Wheel Drive,EV LT,44600,Chevrolet USA,https://www.chevrolet.com/electric/blazer-ev,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Traverse,Gasoline,Front-Wheel Drive,LS,38995,Chevrolet USA,https://www.chevrolet.com/suvs/traverse,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Tahoe,Gasoline,Rear-Wheel Drive,LS,58200,Chevrolet USA,https://www.chevrolet.com/suvs/tahoe,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Suburban,Gasoline,Rear-Wheel Drive,LS,61000,Chevrolet USA,https://www.chevrolet.com/suvs/suburban,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Colorado,Gasoline,Rear-Wheel Drive,WT,31000,Chevrolet USA,https://www.chevrolet.com/trucks/colorado,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Silverado,Gasoline,Rear-Wheel Drive,WT,37700,Chevrolet USA,https://www.chevrolet.com/trucks/silverado-1500,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Silverado,BEV,4-Wheel Drive,EV WT,57095,Chevrolet USA,https://www.chevrolet.com/electric/silverado-ev,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Corvette,Gasoline,Rear-Wheel Drive,Stingray 1LT,68300,Chevrolet USA,https://www.chevrolet.com/performance/corvette,2025-01-01,Base trim MSRP excluding destination
+2025,Ford,Maverick,HEV,Front-Wheel Drive,XL Hybrid,28145,Ford USA,https://www.ford.com/trucks/maverick/,2025-01-01,Base trim MSRP excluding destination
+2025,Ford,Escape,Gasoline,Front-Wheel Drive,Active,29150,Ford USA,https://www.ford.com/suvs/escape/,2025-01-01,Base trim MSRP excluding destination
+2025,Ford,Escape,HEV,Front-Wheel Drive,Active Hybrid,32500,Ford USA,https://www.ford.com/suvs/escape/,2025-01-01,Base trim MSRP excluding destination
+2025,Ford,Escape,PHEV,Front-Wheel Drive,Plug-In Hybrid,40500,Ford USA,https://www.ford.com/suvs/escape/,2025-01-01,Base trim MSRP excluding destination
+2025,Ford,Bronco Sport,Gasoline,4-Wheel Drive,Big Bend,30000,Ford USA,https://www.ford.com/suvs/bronco-sport/,2025-01-01,Base trim MSRP excluding destination
+2025,Ford,Bronco,Gasoline,Part-time 4-Wheel Drive,Big Bend,39000,Ford USA,https://www.ford.com/suvs/bronco/,2025-01-01,Base trim MSRP excluding destination
+2025,Ford,Explorer,Gasoline,Rear-Wheel Drive,Active,39955,Ford USA,https://www.ford.com/suvs/explorer/,2025-01-01,Base trim MSRP excluding destination
+2025,Ford,Expedition,Gasoline,Rear-Wheel Drive,Active,62000,Ford USA,https://www.ford.com/suvs/expedition/,2025-01-01,Base trim MSRP excluding destination
+2025,Ford,Ranger,Gasoline,Rear-Wheel Drive,XL,33000,Ford USA,https://www.ford.com/trucks/ranger/,2025-01-01,Base trim MSRP excluding destination
+2025,Ford,F150,Gasoline,Rear-Wheel Drive,XL,38810,Ford USA,https://www.ford.com/trucks/f150/,2025-01-01,Base trim MSRP excluding destination
+2025,Ford,F150,HEV,Part-time 4-Wheel Drive,PowerBoost Hybrid XLT,57000,Ford USA,https://www.ford.com/trucks/f150/,2025-01-01,Base trim MSRP excluding destination
+2025,Ford,F-150 Lightning,BEV,4-Wheel Drive,Pro,62995,Ford USA,https://www.ford.com/trucks/f150-lightning/,2025-01-01,Base trim MSRP excluding destination
+2025,Ford,Mustang,Gasoline,Rear-Wheel Drive,EcoBoost Fastback,31920,Ford USA,https://www.ford.com/cars/mustang/,2025-01-01,Base trim MSRP excluding destination
+2025,Ford,Mustang Mach-E,BEV,Rear-Wheel Drive,Select,39995,Ford USA,https://www.ford.com/suvs/mach-e/,2025-01-01,Base trim MSRP excluding destination
+2025,Jeep,Compass,Gasoline,All-Wheel Drive,Sport,27495,Jeep USA,https://www.jeep.com/compass.html,2025-01-01,Base trim MSRP excluding destination
+2025,Jeep,Wrangler,Gasoline,4-Wheel Drive,Sport,31995,Jeep USA,https://www.jeep.com/wrangler.html,2025-01-01,Base trim MSRP excluding destination
+2025,Jeep,Wrangler,PHEV,4-Wheel Drive,4xe Sport S,51695,Jeep USA,https://www.jeep.com/wrangler/4xe.html,2025-01-01,Base trim MSRP excluding destination
+2025,Jeep,Grand Cherokee,Gasoline,Rear-Wheel Drive,Laredo,36495,Jeep USA,https://www.jeep.com/grand-cherokee.html,2025-01-01,Base trim MSRP excluding destination
+2025,Jeep,Grand Cherokee,PHEV,4-Wheel Drive,4xe,60290,Jeep USA,https://www.jeep.com/grand-cherokee/4xe.html,2025-01-01,Base trim MSRP excluding destination
+2025,Jeep,Gladiator,Gasoline,4-Wheel Drive,Sport,37995,Jeep USA,https://www.jeep.com/gladiator.html,2025-01-01,Base trim MSRP excluding destination
+2025,Jeep,Wagoneer,Gasoline,Rear-Wheel Drive,Series II,59995,Jeep USA,https://www.jeep.com/wagoneer.html,2025-01-01,Base trim MSRP excluding destination
+2025,Jeep,Grand Wagoneer,Gasoline,All-Wheel Drive,Series II,92995,Jeep USA,https://www.jeep.com/grand-wagoneer.html,2025-01-01,Base trim MSRP excluding destination
+2025,Ram,1500,Gasoline,Rear-Wheel Drive,Tradesman,39450,Ram Trucks,https://www.ramtrucks.com/1500.html,2025-01-01,Base trim MSRP excluding destination
+2025,Ram,1500,HEV,4-Wheel Drive,Big Horn Hurricane,46500,Ram Trucks,https://www.ramtrucks.com/1500.html,2025-01-01,Base trim MSRP excluding destination
+2025,GMC,Terrain,Gasoline,Front-Wheel Drive,Elevation,30100,GMC USA,https://www.gmc.com/suvs/terrain,2025-01-01,Base trim MSRP excluding destination
+2025,GMC,Acadia,Gasoline,Front-Wheel Drive,Elevation,43000,GMC USA,https://www.gmc.com/suvs/acadia,2025-01-01,Base trim MSRP excluding destination
+2025,GMC,Canyon,Gasoline,Rear-Wheel Drive,Elevation,38400,GMC USA,https://www.gmc.com/trucks/canyon,2025-01-01,Base trim MSRP excluding destination
+2025,GMC,Sierra,Gasoline,Rear-Wheel Drive,Pro,38600,GMC USA,https://www.gmc.com/trucks/sierra-1500,2025-01-01,Base trim MSRP excluding destination
+2025,GMC,Sierra,BEV,4-Wheel Drive,EV Elevation,74800,GMC USA,https://www.gmc.com/electric/sierra-ev,2025-01-01,Base trim MSRP excluding destination
+2025,GMC,Yukon,Gasoline,Rear-Wheel Drive,Elevation,63000,GMC USA,https://www.gmc.com/suvs/yukon,2025-01-01,Base trim MSRP excluding destination
+2025,GMC,Hummer EV,BEV,All-Wheel Drive,Pickup 2X,98845,GMC USA,https://www.gmc.com/electric/hummer-ev/pickup,2025-01-01,Base trim MSRP excluding destination
+2025,Volkswagen,Jetta,Gasoline,Front-Wheel Drive,S,22495,Volkswagen USA,https://www.vw.com/en/models/jetta.html,2025-01-01,Base trim MSRP excluding destination
+2025,Volkswagen,Taos,Gasoline,Front-Wheel Drive,S,24995,Volkswagen USA,https://www.vw.com/en/models/taos.html,2025-01-01,Base trim MSRP excluding destination
+2025,Volkswagen,Tiguan,Gasoline,Front-Wheel Drive,S,29495,Volkswagen USA,https://www.vw.com/en/models/tiguan.html,2025-01-01,Base trim MSRP excluding destination
+2025,Volkswagen,Atlas,Gasoline,Front-Wheel Drive,SE,39500,Volkswagen USA,https://www.vw.com/en/models/atlas.html,2025-01-01,Base trim MSRP excluding destination
+2025,Volkswagen,Golf/GTI,Gasoline,Front-Wheel Drive,GTI S,32500,Volkswagen USA,https://www.vw.com/en/models/golf-gti.html,2025-01-01,Base trim MSRP excluding destination
+2025,Volkswagen,ID.4,BEV,Rear-Wheel Drive,Standard,39735,Volkswagen USA,https://www.vw.com/en/models/id-4.html,2025-01-01,Base trim MSRP excluding destination
+2025,Volkswagen,ID. Buzz,BEV,Rear-Wheel Drive,Pro S,59995,Volkswagen USA,https://www.vw.com/en/models/id-buzz.html,2025-01-01,Base trim MSRP excluding destination
+2025,Tesla,Model 3,BEV,Rear-Wheel Drive,Long Range RWD,42490,Tesla,https://www.tesla.com/model3,2025-01-01,Base trim MSRP excluding destination
+2025,Tesla,Model 3,BEV,All-Wheel Drive,Long Range AWD,47490,Tesla,https://www.tesla.com/model3,2025-01-01,Base trim MSRP excluding destination
+2025,Tesla,Model Y,BEV,Rear-Wheel Drive,Long Range RWD,44990,Tesla,https://www.tesla.com/modely,2025-01-01,Base trim MSRP excluding destination
+2025,Tesla,Model Y,BEV,All-Wheel Drive,Long Range AWD,48990,Tesla,https://www.tesla.com/modely,2025-01-01,Base trim MSRP excluding destination
+2025,Tesla,Model S,BEV,All-Wheel Drive,Dual Motor,79990,Tesla,https://www.tesla.com/models,2025-01-01,Base trim MSRP excluding destination
+2025,Tesla,Model X,BEV,All-Wheel Drive,Dual Motor,84990,Tesla,https://www.tesla.com/modelx,2025-01-01,Base trim MSRP excluding destination
+2025,Tesla,Cybertruck,BEV,All-Wheel Drive,All-Wheel Drive,79990,Tesla,https://www.tesla.com/cybertruck,2025-01-01,Base trim MSRP excluding destination
+2025,Buick,Envista,Gasoline,Front-Wheel Drive,Preferred,23800,Buick USA,https://www.buick.com/suvs/envista,2025-01-01,Base trim MSRP excluding destination
+2025,Buick,Encore,Gasoline,Front-Wheel Drive,GX Preferred,25200,Buick USA,https://www.buick.com/suvs/encore-gx,2025-01-01,Base trim MSRP excluding destination
+2025,Buick,Envision,Gasoline,All-Wheel Drive,Preferred,36500,Buick USA,https://www.buick.com/suvs/envision,2025-01-01,Base trim MSRP excluding destination
+2025,Buick,Enclave,Gasoline,Front-Wheel Drive,Preferred,45700,Buick USA,https://www.buick.com/suvs/enclave,2025-01-01,Base trim MSRP excluding destination
+2025,Dodge,Hornet,Gasoline,All-Wheel Drive,GT,31400,Dodge USA,https://www.dodge.com/hornet.html,2025-01-01,Base trim MSRP excluding destination
+2025,Dodge,Hornet,PHEV,All-Wheel Drive,R/T,43000,Dodge USA,https://www.dodge.com/hornet.html,2025-01-01,Base trim MSRP excluding destination
+2025,Dodge,Durango,Gasoline,Rear-Wheel Drive,GT,40300,Dodge USA,https://www.dodge.com/durango.html,2025-01-01,Base trim MSRP excluding destination
+2025,Dodge,Charger,BEV,All-Wheel Drive,Daytona R/T,59595,Dodge USA,https://www.dodge.com/charger-daytona.html,2025-01-01,Base trim MSRP excluding destination
+2025,Chrysler,Voyager,Gasoline,Front-Wheel Drive,LX,39000,Chrysler USA,https://www.chrysler.com/voyager.html,2025-01-01,Base trim MSRP excluding destination
+2025,Chrysler,Pacifica,Gasoline,Front-Wheel Drive,Select,41000,Chrysler USA,https://www.chrysler.com/pacifica.html,2025-01-01,Base trim MSRP excluding destination
+2025,Chrysler,Pacifica,PHEV,Front-Wheel Drive,Hybrid Select,51095,Chrysler USA,https://www.chrysler.com/pacifica/hybrid.html,2025-01-01,Base trim MSRP excluding destination
+2025,Mitsubishi,Outlander,Gasoline,Front-Wheel Drive,ES,29145,Mitsubishi Motors USA,https://www.mitsubishicars.com/outlander,2025-01-01,Base trim MSRP excluding destination
+2025,Mitsubishi,Outlander,PHEV,All-Wheel Drive,Plug-in Hybrid ES,41600,Mitsubishi Motors USA,https://www.mitsubishicars.com/outlander-phev,2025-01-01,Base trim MSRP excluding destination
+2025,Mitsubishi,Eclipse Cross,Gasoline,Front-Wheel Drive,ES,26500,Mitsubishi Motors USA,https://www.mitsubishicars.com/eclipse-cross,2025-01-01,Base trim MSRP excluding destination
+2025,Fiat,500e,BEV,Front-Wheel Drive,INSPI(RED),32500,FIAT USA,https://www.fiatusa.com/500e.html,2025-01-01,Base trim MSRP excluding destination
+2025,MINI,Cooper,Gasoline,Front-Wheel Drive,Cooper S 2-Door,28950,MINI USA,https://www.miniusa.com/model/hardtop-2-door.html,2025-01-01,Base trim MSRP excluding destination
+2025,MINI,Countryman,Gasoline,All-Wheel Drive,S ALL4,38900,MINI USA,https://www.miniusa.com/model/countryman.html,2025-01-01,Base trim MSRP excluding destination
+2025,MINI,Countryman,BEV,All-Wheel Drive,SE ALL4,45200,MINI USA,https://www.miniusa.com/model/countryman-electric.html,2025-01-01,Base trim MSRP excluding destination
+2025,Acura,Integra,Gasoline,Front-Wheel Drive,Base,33600,Acura,https://www.acura.com/integra,2025-01-01,Base trim MSRP excluding destination
+2025,Acura,ADX,Gasoline,Front-Wheel Drive,Base,36350,Acura,https://www.acura.com/adx,2025-01-01,Base trim MSRP excluding destination
+2025,Acura,TLX,Gasoline,Front-Wheel Drive,Base,45300,Acura,https://www.acura.com/tlx,2025-01-01,Base trim MSRP excluding destination
+2025,Acura,RDX,Gasoline,All-Wheel Drive,Base SH-AWD,46800,Acura,https://www.acura.com/rdx,2025-01-01,Base trim MSRP excluding destination
+2025,Acura,MDX,Gasoline,Front-Wheel Drive,Base,51200,Acura,https://www.acura.com/mdx,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,UX,HEV,Front-Wheel Drive,300h,36490,Lexus USA,https://www.lexus.com/models/UX,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,NX,Gasoline,Front-Wheel Drive,250,40460,Lexus USA,https://www.lexus.com/models/NX,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,NX,HEV,All-Wheel Drive,350h,44060,Lexus USA,https://www.lexus.com/models/NX,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,NX,PHEV,All-Wheel Drive,450h+,60125,Lexus USA,https://www.lexus.com/models/NX,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,ES,Gasoline,Front-Wheel Drive,250,43190,Lexus USA,https://www.lexus.com/models/ES,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,ES,HEV,Front-Wheel Drive,300h,45690,Lexus USA,https://www.lexus.com/models/ES,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,IS,Gasoline,Rear-Wheel Drive,300,43330,Lexus USA,https://www.lexus.com/models/IS,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,RX,Gasoline,Front-Wheel Drive,350,49950,Lexus USA,https://www.lexus.com/models/RX,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,RX,HEV,All-Wheel Drive,350h,54750,Lexus USA,https://www.lexus.com/models/RX,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,RX,PHEV,All-Wheel Drive,450h+,71950,Lexus USA,https://www.lexus.com/models/RX,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,TX,Gasoline,Front-Wheel Drive,350,56000,Lexus USA,https://www.lexus.com/models/TX,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,GX,Gasoline,4-Wheel Drive,550 Premium,64250,Lexus USA,https://www.lexus.com/models/GX,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,RZ,BEV,All-Wheel Drive,450e,57400,Lexus USA,https://www.lexus.com/models/RZ,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,LS,Gasoline,All-Wheel Drive,500 AWD,81000,Lexus USA,https://www.lexus.com/models/LS,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,LX,Gasoline,All-Wheel Drive,600 Premium,105000,Lexus USA,https://www.lexus.com/models/LX,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,2 Series,Gasoline,Rear-Wheel Drive,230i Coupe,39600,BMW USA,https://www.bmwusa.com/vehicles/2-series.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,3 Series,HEV,Rear-Wheel Drive,330i,46075,BMW USA,https://www.bmwusa.com/vehicles/3-series.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,4 Series,HEV,Rear-Wheel Drive,430i Coupe,51000,BMW USA,https://www.bmwusa.com/vehicles/4-series.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,5 Series,HEV,Rear-Wheel Drive,530i,59500,BMW USA,https://www.bmwusa.com/vehicles/5-series.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,5 Series,PHEV,All-Wheel Drive,550e xDrive,73600,BMW USA,https://www.bmwusa.com/vehicles/5-series.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,7 Series,HEV,Rear-Wheel Drive,740i,98000,BMW USA,https://www.bmwusa.com/vehicles/7-series.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,8 Series,Gasoline,All-Wheel Drive,840i xDrive Coupe,89000,BMW USA,https://www.bmwusa.com/vehicles/8-series.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,X1,Gasoline,All-Wheel Drive,xDrive28i,41500,BMW USA,https://www.bmwusa.com/vehicles/x-models/x1.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,X2,Gasoline,All-Wheel Drive,xDrive28i,43500,BMW USA,https://www.bmwusa.com/vehicles/x-models/x2.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,X3,HEV,All-Wheel Drive,xDrive30,50675,BMW USA,https://www.bmwusa.com/vehicles/x-models/x3.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,X5,HEV,Rear-Wheel Drive,sDrive40i,66500,BMW USA,https://www.bmwusa.com/vehicles/x-models/x5.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,X5,PHEV,All-Wheel Drive,xDrive50e,74600,BMW USA,https://www.bmwusa.com/vehicles/x-models/x5.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,X7,HEV,All-Wheel Drive,xDrive40i,84500,BMW USA,https://www.bmwusa.com/vehicles/x-models/x7.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,Z4,Gasoline,Rear-Wheel Drive,sDrive30i,54000,BMW USA,https://www.bmwusa.com/vehicles/z4.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,i4,BEV,Rear-Wheel Drive,eDrive40 Gran Coupe,53000,BMW USA,https://www.bmwusa.com/vehicles/bmw-i/i4.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,i5,BEV,Rear-Wheel Drive,eDrive40,67000,BMW USA,https://www.bmwusa.com/vehicles/bmw-i/i5.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,i7,BEV,All-Wheel Drive,xDrive60,106000,BMW USA,https://www.bmwusa.com/vehicles/bmw-i/i7.html,2025-01-01,Base trim MSRP excluding destination
+2025,BMW,iX,BEV,All-Wheel Drive,xDrive50,88000,BMW USA,https://www.bmwusa.com/vehicles/bmw-i/ix.html,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,CLA-Class,HEV,Front-Wheel Drive,CLA 250,46000,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/cla/sedan,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,C-Class,HEV,Rear-Wheel Drive,C 300,48500,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/c-class/sedan,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,E-Class,HEV,Rear-Wheel Drive,E 350,62500,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/e-class/sedan,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,S-Class,HEV,All-Wheel Drive,S 500 4MATIC,118900,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/s-class/sedan,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,GLA-Class,HEV,Front-Wheel Drive,GLA 250,43000,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/gla/suv,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,GLB-Class,HEV,Front-Wheel Drive,GLB 250,45000,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/glb/suv,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,GLC-Class,HEV,Rear-Wheel Drive,GLC 300,49500,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/glc/suv,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,GLE-Class,HEV,Rear-Wheel Drive,GLE 350,63500,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/gle/suv,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,GLS-Class,HEV,All-Wheel Drive,GLS 450 4MATIC,89000,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/gls/suv,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,G-Class,HEV,4-Wheel Drive,G 550,148000,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/g-class/suv,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,EQB,BEV,Front-Wheel Drive,EQB 250+,54000,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/eqb/suv,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,EQE,BEV,Rear-Wheel Drive,EQE 350+,75000,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/eqe/sedan,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,EQS,BEV,Rear-Wheel Drive,EQS 450+,105000,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/eqs/sedan,2025-01-01,Base trim MSRP excluding destination
+2025,Audi,A3,Gasoline,All-Wheel Drive,Premium quattro,38200,Audi USA,https://www.audiusa.com/us/web/en/models/a3/a3/2025/overview.html,2025-01-01,Base trim MSRP excluding destination
+2025,Audi,A5,Gasoline,All-Wheel Drive,Premium quattro,46500,Audi USA,https://www.audiusa.com/us/web/en/models/a5/a5-sportback/2025/overview.html,2025-01-01,Base trim MSRP excluding destination
+2025,Audi,A6,HEV,All-Wheel Drive,Premium quattro,58000,Audi USA,https://www.audiusa.com/us/web/en/models/a6/a6-sedan/2025/overview.html,2025-01-01,Base trim MSRP excluding destination
+2025,Audi,Q3,Gasoline,All-Wheel Drive,Premium quattro,38900,Audi USA,https://www.audiusa.com/us/web/en/models/q3/q3/2025/overview.html,2025-01-01,Base trim MSRP excluding destination
+2025,Audi,Q5,Gasoline,All-Wheel Drive,Premium quattro,46200,Audi USA,https://www.audiusa.com/us/web/en/models/q5/q5/2025/overview.html,2025-01-01,Base trim MSRP excluding destination
+2025,Audi,Q5,PHEV,All-Wheel Drive,55 TFSI e Premium,60000,Audi USA,https://www.audiusa.com/us/web/en/models/q5/q5-tfsi-e/2025/overview.html,2025-01-01,Base trim MSRP excluding destination
+2025,Audi,Q7,Gasoline,All-Wheel Drive,Premium quattro,61000,Audi USA,https://www.audiusa.com/us/web/en/models/q7/q7/2025/overview.html,2025-01-01,Base trim MSRP excluding destination
+2025,Audi,Q8,HEV,All-Wheel Drive,Premium quattro,75000,Audi USA,https://www.audiusa.com/us/web/en/models/q8/q8/2025/overview.html,2025-01-01,Base trim MSRP excluding destination
+2025,Audi,Q4 e-tron,BEV,Rear-Wheel Drive,45 Premium,50200,Audi USA,https://www.audiusa.com/us/web/en/models/q4-e-tron/q4-e-tron/2025/overview.html,2025-01-01,Base trim MSRP excluding destination
+2025,Audi,Q6 e-tron,BEV,All-Wheel Drive,Premium quattro,65000,Audi USA,https://www.audiusa.com/us/web/en/models/q6-e-tron/q6-e-tron/2025/overview.html,2025-01-01,Base trim MSRP excluding destination
+2025,Audi,S3,Gasoline,All-Wheel Drive,Premium,48000,Audi USA,https://www.audiusa.com/us/web/en/models/a3/s3/2025/overview.html,2025-01-01,Base trim MSRP excluding destination
+2025,Cadillac,CT4,Gasoline,Rear-Wheel Drive,Luxury,35500,Cadillac USA,https://www.cadillac.com/sedans/ct4,2025-01-01,Base trim MSRP excluding destination
+2025,Cadillac,CT5,Gasoline,Rear-Wheel Drive,Luxury,47000,Cadillac USA,https://www.cadillac.com/sedans/ct5,2025-01-01,Base trim MSRP excluding destination
+2025,Cadillac,XT4,Gasoline,Front-Wheel Drive,Luxury,40000,Cadillac USA,https://www.cadillac.com/suvs/xt4,2025-01-01,Base trim MSRP excluding destination
+2025,Cadillac,XT5,Gasoline,Front-Wheel Drive,Luxury,46000,Cadillac USA,https://www.cadillac.com/suvs/xt5,2025-01-01,Base trim MSRP excluding destination
+2025,Cadillac,XT6,Gasoline,Front-Wheel Drive,Luxury,51000,Cadillac USA,https://www.cadillac.com/suvs/xt6,2025-01-01,Base trim MSRP excluding destination
+2025,Cadillac,Escalade,Gasoline,Rear-Wheel Drive,Luxury,87000,Cadillac USA,https://www.cadillac.com/suvs/escalade,2025-01-01,Base trim MSRP excluding destination
+2025,Cadillac,LYRIQ,BEV,Rear-Wheel Drive,Luxury 1,58000,Cadillac USA,https://www.cadillac.com/electric/lyriq,2025-01-01,Base trim MSRP excluding destination
+2025,Volvo,S60,HEV,All-Wheel Drive,B5 Plus,44000,Volvo Cars USA,https://www.volvocars.com/us/cars/s60-hybrid/,2025-01-01,Base trim MSRP excluding destination
+2025,Volvo,XC40,HEV,All-Wheel Drive,B5 Core,41000,Volvo Cars USA,https://www.volvocars.com/us/cars/xc40-hybrid/,2025-01-01,Base trim MSRP excluding destination
+2025,Volvo,XC60,HEV,All-Wheel Drive,B5 Core,47000,Volvo Cars USA,https://www.volvocars.com/us/cars/xc60-hybrid/,2025-01-01,Base trim MSRP excluding destination
+2025,Volvo,XC60,PHEV,All-Wheel Drive,T8 Plus,59000,Volvo Cars USA,https://www.volvocars.com/us/cars/xc60-plugin-hybrid/,2025-01-01,Base trim MSRP excluding destination
+2025,Volvo,XC90,HEV,All-Wheel Drive,B5 Core,58000,Volvo Cars USA,https://www.volvocars.com/us/cars/xc90-hybrid/,2025-01-01,Base trim MSRP excluding destination
+2025,Volvo,XC90,PHEV,All-Wheel Drive,T8 Plus,72000,Volvo Cars USA,https://www.volvocars.com/us/cars/xc90-plugin-hybrid/,2025-01-01,Base trim MSRP excluding destination
+2025,Volvo,EX30,BEV,Rear-Wheel Drive,Single Motor Plus,45000,Volvo Cars USA,https://www.volvocars.com/us/cars/ex30-electric/,2025-01-01,Base trim MSRP excluding destination
+2025,Volvo,EX90,BEV,All-Wheel Drive,Twin Motor Plus,81000,Volvo Cars USA,https://www.volvocars.com/us/cars/ex90-electric/,2025-01-01,Base trim MSRP excluding destination
+2025,Genesis,G70,Gasoline,Rear-Wheel Drive,2.5T,43000,Genesis USA,https://www.genesis.com/us/en/models/g70.html,2025-01-01,Base trim MSRP excluding destination
+2025,Genesis,G80,Gasoline,All-Wheel Drive,2.5T AWD,60000,Genesis USA,https://www.genesis.com/us/en/models/g80.html,2025-01-01,Base trim MSRP excluding destination
+2025,Genesis,G90,Gasoline,All-Wheel Drive,3.5T,90000,Genesis USA,https://www.genesis.com/us/en/models/g90.html,2025-01-01,Base trim MSRP excluding destination
+2025,Genesis,GV70,Gasoline,All-Wheel Drive,2.5T,47000,Genesis USA,https://www.genesis.com/us/en/models/gv70.html,2025-01-01,Base trim MSRP excluding destination
+2025,Genesis,GV80,Gasoline,All-Wheel Drive,2.5T,60000,Genesis USA,https://www.genesis.com/us/en/models/gv80.html,2025-01-01,Base trim MSRP excluding destination
+2025,Genesis,GV60,BEV,All-Wheel Drive,Advanced,53000,Genesis USA,https://www.genesis.com/us/en/models/gv60.html,2025-01-01,Base trim MSRP excluding destination
+2025,Porsche,718,Gasoline,Rear-Wheel Drive,Cayman,75000,Porsche Cars North America,https://www.porsche.com/usa/models/718/,2025-01-01,Base trim MSRP excluding destination
+2025,Porsche,911,Gasoline,Rear-Wheel Drive,Carrera,122000,Porsche Cars North America,https://www.porsche.com/usa/models/911/,2025-01-01,Base trim MSRP excluding destination
+2025,Porsche,Macan,Gasoline,All-Wheel Drive,Macan,65000,Porsche Cars North America,https://www.porsche.com/usa/models/macan/,2025-01-01,Base trim MSRP excluding destination
+2025,Porsche,Macan,BEV,Rear-Wheel Drive,Macan Electric,78000,Porsche Cars North America,https://www.porsche.com/usa/models/macan/,2025-01-01,Base trim MSRP excluding destination
+2025,Porsche,Cayenne,Gasoline,All-Wheel Drive,Cayenne,82000,Porsche Cars North America,https://www.porsche.com/usa/models/cayenne/,2025-01-01,Base trim MSRP excluding destination
+2025,Porsche,Cayenne,PHEV,All-Wheel Drive,E-Hybrid,95000,Porsche Cars North America,https://www.porsche.com/usa/models/cayenne/,2025-01-01,Base trim MSRP excluding destination
+2025,Porsche,Panamera,Gasoline,Rear-Wheel Drive,Panamera,104000,Porsche Cars North America,https://www.porsche.com/usa/models/panamera/,2025-01-01,Base trim MSRP excluding destination
+2025,Porsche,Taycan,BEV,Rear-Wheel Drive,Taycan,100000,Porsche Cars North America,https://www.porsche.com/usa/models/taycan/,2025-01-01,Base trim MSRP excluding destination
+2025,Land Rover,Defender,Gasoline,4-Wheel Drive,110 S,57000,Land Rover USA,https://www.landroverusa.com/defender/index.html,2025-01-01,Base trim MSRP excluding destination
+2025,Land Rover,Discovery,Gasoline,4-Wheel Drive,S,62000,Land Rover USA,https://www.landroverusa.com/discovery/index.html,2025-01-01,Base trim MSRP excluding destination
+2025,Land Rover,Range Rover,HEV,4-Wheel Drive,SE,109000,Land Rover USA,https://www.landroverusa.com/range-rover/index.html,2025-01-01,Base trim MSRP excluding destination
+2025,Lincoln,Corsair,Gasoline,Front-Wheel Drive,Premiere,40000,Lincoln,https://www.lincoln.com/luxury-suvs/corsair/,2025-01-01,Base trim MSRP excluding destination
+2025,Lincoln,Nautilus,Gasoline,All-Wheel Drive,Premiere,50000,Lincoln,https://www.lincoln.com/luxury-suvs/nautilus/,2025-01-01,Base trim MSRP excluding destination
+2025,Lincoln,Aviator,Gasoline,Rear-Wheel Drive,Premiere,60000,Lincoln,https://www.lincoln.com/luxury-suvs/aviator/,2025-01-01,Base trim MSRP excluding destination
+2025,Lincoln,Navigator,Gasoline,Part-time 4-Wheel Drive,Premiere,103000,Lincoln,https://www.lincoln.com/luxury-suvs/navigator/,2025-01-01,Base trim MSRP excluding destination
+2025,Infiniti,QX50,Gasoline,Front-Wheel Drive,Pure,40000,INFINITI USA,https://www.infinitiusa.com/vehicles/crossover-suv/qx50.html,2025-01-01,Base trim MSRP excluding destination
+2025,Infiniti,QX60,Gasoline,Front-Wheel Drive,Pure,50000,INFINITI USA,https://www.infinitiusa.com/vehicles/crossover-suv/qx60.html,2025-01-01,Base trim MSRP excluding destination
+2025,Infiniti,QX80,Gasoline,Rear-Wheel Drive,Pure,82000,INFINITI USA,https://www.infinitiusa.com/vehicles/crossover-suv/qx80.html,2025-01-01,Base trim MSRP excluding destination
+2025,Rivian,R1T,BEV,4-Wheel Drive,Dual Motor Standard,71700,Rivian,https://rivian.com/r1t,2025-01-01,Base trim MSRP excluding destination
+2025,Rivian,R1S,BEV,4-Wheel Drive,Dual Motor Standard,77700,Rivian,https://rivian.com/r1s,2025-01-01,Base trim MSRP excluding destination
+2025,Lucid,Air,BEV,Rear-Wheel Drive,Pure,69900,Lucid Motors,https://lucidmotors.com/air,2025-01-01,Base trim MSRP excluding destination
+2025,Lucid,Gravity,BEV,All-Wheel Drive,Grand Touring,94900,Lucid Motors,https://lucidmotors.com/gravity,2025-01-01,Base trim MSRP excluding destination
+2025,Polestar,2,BEV,Rear-Wheel Drive,Long range Single motor,49000,Polestar,https://www.polestar.com/us/polestar-2/,2025-01-01,Base trim MSRP excluding destination
+2025,Polestar,3,BEV,All-Wheel Drive,Long range Dual motor,73000,Polestar,https://www.polestar.com/us/polestar-3/,2025-01-01,Base trim MSRP excluding destination
+2025,Polestar,4,BEV,Rear-Wheel Drive,Long range Single motor,56000,Polestar,https://www.polestar.com/us/polestar-4/,2025-01-01,Base trim MSRP excluding destination
+2025,Jaguar,F-Pace,Gasoline,All-Wheel Drive,P250 S,55000,Jaguar USA,https://www.jaguarusa.com/all-models/f-pace/index.html,2025-01-01,Base trim MSRP excluding destination
+2025,Alfa Romeo,Giulia,Gasoline,Rear-Wheel Drive,Sprint,45000,Alfa Romeo USA,https://www.alfaromeousa.com/giulia,2025-01-01,Base trim MSRP excluding destination
+2025,Alfa Romeo,Stelvio,Gasoline,All-Wheel Drive,Sprint,48000,Alfa Romeo USA,https://www.alfaromeousa.com/stelvio,2025-01-01,Base trim MSRP excluding destination
+2025,Alfa Romeo,Tonale,Gasoline,All-Wheel Drive,Sprint,31000,Alfa Romeo USA,https://www.alfaromeousa.com/tonale,2025-01-01,Base trim MSRP excluding destination
+2025,Chrysler,Pacifica,Gasoline,All-Wheel Drive,Select AWD,45000,Chrysler USA,https://www.chrysler.com/pacifica.html,2025-01-01,Base trim MSRP excluding destination
+2025,Toyota,Sienna,HEV,All-Wheel Drive,LE AWD,41185,Toyota USA,https://www.toyota.com/sienna/,2025-01-01,Base trim MSRP excluding destination
+2025,Volkswagen,ID. Buzz,BEV,All-Wheel Drive,Pro S Plus 4MOTION,67000,Volkswagen USA,https://www.vw.com/en/models/id-buzz.html,2025-01-01,Base trim MSRP excluding destination
+2026,Chrysler,Pacifica,Gasoline,Front-Wheel Drive,Select,42000,Chrysler USA,https://www.chrysler.com/pacifica.html,2026-01-01,Base trim MSRP excluding destination
+2026,Chrysler,Pacifica,PHEV,Front-Wheel Drive,Hybrid Select,52000,Chrysler USA,https://www.chrysler.com/pacifica/hybrid.html,2026-01-01,Base trim MSRP excluding destination
+2026,Chrysler,Voyager,Gasoline,Front-Wheel Drive,LX,40000,Chrysler USA,https://www.chrysler.com/voyager.html,2026-01-01,Base trim MSRP excluding destination
+2026,Honda,Odyssey,Gasoline,Front-Wheel Drive,EX,43000,Honda USA,https://automobiles.honda.com/odyssey,2026-01-01,Base trim MSRP excluding destination
+2026,Kia,Carnival,Gasoline,Front-Wheel Drive,LX,37500,Kia USA,https://www.kia.com/us/en/carnival,2026-01-01,Base trim MSRP excluding destination
+2026,Kia,Carnival,HEV,Front-Wheel Drive,Hybrid LXS,41900,Kia USA,https://www.kia.com/us/en/carnival-hybrid,2026-01-01,Base trim MSRP excluding destination
+2026,Toyota,Sienna,HEV,Front-Wheel Drive,LE,40000,Toyota USA,https://www.toyota.com/sienna/,2026-01-01,Base trim MSRP excluding destination
+2026,Toyota,Sienna,HEV,All-Wheel Drive,LE AWD,42000,Toyota USA,https://www.toyota.com/sienna/,2026-01-01,Base trim MSRP excluding destination
+2025,Porsche,911,Gasoline,All-Wheel Drive,Carrera 4 GTS,158000,Porsche Cars North America,https://www.porsche.com/usa/models/911/,2025-01-01,Base trim MSRP excluding destination
+2026,Porsche,911,Gasoline,Rear-Wheel Drive,Carrera,127000,Porsche Cars North America,https://www.porsche.com/usa/models/911/,2026-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,SL-Class,Gasoline,All-Wheel Drive,AMG SL 55,152000,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/sl/roadster,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,AMG GT,Gasoline,All-Wheel Drive,AMG GT 55 Coupe,148000,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/amg-gt/coupe,2025-01-01,Base trim MSRP excluding destination
+2025,Lexus,LC,Gasoline,Rear-Wheel Drive,LC 500,101000,Lexus USA,https://www.lexus.com/models/LC,2025-01-01,Base trim MSRP excluding destination
+2025,Lotus,Emira,Gasoline,Rear-Wheel Drive,V6 First Edition,102000,Lotus Cars USA,https://www.lotuscars.com/en-US/emira,2025-01-01,Base trim MSRP excluding destination
+2025,Maserati,MC20,Gasoline,Rear-Wheel Drive,Coupe,242000,Maserati USA,https://www.maserati.com/us/en/models/mc20,2025-01-01,Base trim MSRP excluding destination
+2025,Maserati,GT2 Stradale,Gasoline,Rear-Wheel Drive,Base,313000,Maserati USA,https://www.maserati.com/us/en/models/gt2-stradale,2025-01-01,Base trim MSRP excluding destination
+2025,Aston Martin,Vantage,Gasoline,Rear-Wheel Drive,Coupe,191000,Aston Martin,https://www.astonmartin.com/en-us/models/vantage,2025-01-01,Base trim MSRP excluding destination
+2025,Aston Martin,DB12 V8,Gasoline,Rear-Wheel Drive,Coupe,248000,Aston Martin,https://www.astonmartin.com/en-us/models/db12,2025-01-01,Base trim MSRP excluding destination
+2025,Aston Martin,Vanquish,Gasoline,Rear-Wheel Drive,Coupe,429000,Aston Martin,https://www.astonmartin.com/en-us/models/vanquish,2025-01-01,Base trim MSRP excluding destination
+2025,Ferrari,Roma,Gasoline,Rear-Wheel Drive,Coupe,247000,Ferrari,https://www.ferrari.com/en-US/auto/ferrari-roma,2025-01-01,Base trim MSRP excluding destination
+2025,Ferrari,296 GTB,PHEV,Rear-Wheel Drive,Base,342000,Ferrari,https://www.ferrari.com/en-US/auto/296-gtb,2025-01-01,Base trim MSRP excluding destination
+2025,Ferrari,SF90,PHEV,All-Wheel Drive,Stradale,524000,Ferrari,https://www.ferrari.com/en-US/auto/sf90-stradale,2025-01-01,Base trim MSRP excluding destination
+2025,Lamborghini,Revuelto,HEV,4-Wheel Drive,Base,608000,Lamborghini,https://www.lamborghini.com/en-en/models/revuelto,2025-01-01,Base trim MSRP excluding destination
+2025,Chevrolet,Corvette,HEV,All-Wheel Drive,E-Ray 1LZ,107000,Chevrolet USA,https://www.chevrolet.com/performance/corvette,2025-01-01,Base trim MSRP excluding destination
+2025,MINI,John Cooper Works,Gasoline,Front-Wheel Drive,JCW 2-Door,35000,MINI USA,https://www.miniusa.com/model/john-cooper-works.html,2025-01-01,Base trim MSRP excluding destination
+2026,Mazda,MX-5,Gasoline,Rear-Wheel Drive,Sport,30000,Mazda USA,https://www.mazdausa.com/vehicles/mx-5-miata,2026-01-01,Base trim MSRP excluding destination
+2026,Subaru,BRZ,Gasoline,Rear-Wheel Drive,Premium,32000,Subaru of America,https://www.subaru.com/vehicles/brz,2026-01-01,Base trim MSRP excluding destination
+2026,Nissan,Z,Gasoline,Rear-Wheel Drive,Sport,44500,Nissan USA,https://www.nissanusa.com/vehicles/sports-cars/z.html,2026-01-01,Base trim MSRP excluding destination
+2025,Volvo,V60,HEV,All-Wheel Drive,B5 Cross Country Plus,48000,Volvo Cars USA,https://www.volvocars.com/us/cars/v60-cross-country/,2025-01-01,Base trim MSRP excluding destination
+2025,Volvo,V90,HEV,All-Wheel Drive,B6 Cross Country Plus,60000,Volvo Cars USA,https://www.volvocars.com/us/cars/v90-cross-country/,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,GLA-Class,HEV,All-Wheel Drive,GLA 250 4MATIC,45000,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/gla/suv,2025-01-01,Base trim MSRP excluding destination
+2025,Mercedes-Benz,GLB-Class,HEV,All-Wheel Drive,GLB 250 4MATIC,47000,Mercedes-Benz USA,https://www.mbusa.com/en/vehicles/class/glb/suv,2025-01-01,Base trim MSRP excluding destination
+2026,Honda,HR-V,Gasoline,Front-Wheel Drive,LX,27000,Honda USA,https://automobiles.honda.com/hr-v,2026-01-01,Base trim MSRP excluding destination
+2026,Chevrolet,Trax,Gasoline,Front-Wheel Drive,LS,21500,Chevrolet USA,https://www.chevrolet.com/suvs/trax,2026-01-01,Base trim MSRP excluding destination
+2026,Buick,Envista,Gasoline,Front-Wheel Drive,Preferred,24500,Buick USA,https://www.buick.com/suvs/envista,2026-01-01,Base trim MSRP excluding destination
+2026,Subaru,Impreza,Gasoline,All-Wheel Drive,Base,24000,Subaru of America,https://www.subaru.com/vehicles/impreza,2026-01-01,Base trim MSRP excluding destination
+2026,Nissan,LEAF,BEV,Front-Wheel Drive,S+,31000,Nissan USA,https://www.nissanusa.com/vehicles/electric-cars/leaf.html,2026-01-01,Base trim MSRP excluding destination

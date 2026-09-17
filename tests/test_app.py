@@ -13,8 +13,28 @@ import pytest
 from streamlit.testing.v1 import AppTest
 
 from tco.assumptions import CATALOG_COLUMNS, coerce_catalog_dtypes
+from tco.paths import COST_ASSUMPTIONS_PATH
 
 APP = str(Path(__file__).resolve().parent.parent / "streamlit_app.py")
+
+CATALOG = pd.read_csv(COST_ASSUMPTIONS_PATH)
+
+
+def vehicle_id(make: str, model: str, powertrain: str, drive: str) -> str:
+    """Resolve an id from the generated catalog so tests survive a rebuild."""
+    rows = CATALOG[
+        (CATALOG["make"] == make)
+        & (CATALOG["model"] == model)
+        & (CATALOG["powertrain"] == powertrain)
+        & (CATALOG["trim"] == drive)
+        & CATALOG["purchase_price_usd"].notna()
+    ]
+    assert not rows.empty, f"no priced catalog row for {make} {model} {powertrain}"
+    return str(rows.sort_values("model_year").iloc[0]["vehicle_id"])
+
+
+GASOLINE_CAR = vehicle_id("Toyota", "Corolla", "Gasoline", "Front-Wheel Drive")
+ELECTRIC_CAR = vehicle_id("Tesla", "Model 3", "BEV", "Rear-Wheel Drive")
 
 
 def run_app(**session_state) -> AppTest:
@@ -44,10 +64,11 @@ def test_default_shortlist_spans_multiple_powertrains():
 
 
 def test_filtering_by_powertrain_limits_the_options():
+    unfiltered = run_app(shortlist_initialized=True, shortlist=[])
     app = run_app(filter_powertrain=["BEV"], shortlist_initialized=True, shortlist=[])
     assert not app.exception
     options = app.multiselect(key="shortlist").options
-    assert len(options) == 6
+    assert 0 < len(options) < len(unfiltered.multiselect(key="shortlist").options)
     assert not any("Corolla" in label for label in options)
 
 
@@ -60,14 +81,15 @@ def test_filtering_by_segment_narrows_the_options():
     assert not app.exception
     options = app.multiselect(key="shortlist").options
     assert options
-    assert all("F-150" in label or "Maverick" in label for label in options)
+    pickups = set(CATALOG.loc[CATALOG["body_segment"] == "Pickup", "model"])
+    assert all(any(model in label for model in pickups) for label in options)
 
 
 def test_filters_narrow_one_another_and_drop_impossible_combinations():
-    app = run_app(filter_segment=["Pickup"], filter_make=["Toyota"])
+    app = run_app(filter_segment=["Pickup"], filter_make=["Porsche"])
     assert not app.exception
-    # Toyota sells no pickup in the seed catalog, so the brand filter is dropped
-    # rather than silently producing an empty comparison.
+    # Porsche sells no pickup, so the brand filter is dropped rather than
+    # silently producing an empty comparison.
     assert app.session_state["filter_make"] == []
 
 
@@ -80,7 +102,7 @@ def test_an_empty_catalog_shows_the_empty_state():
 
 
 def test_selecting_a_shortlist_updates_the_comparison():
-    app = run_app(shortlist_initialized=True, shortlist=["epa-48765"])
+    app = run_app(shortlist_initialized=True, shortlist=[ELECTRIC_CAR])
     assert not app.exception
     assert len(app.dataframe[0].value) == 1
     assert app.dataframe[0].value.iloc[0]["label"].startswith("2025 Tesla Model 3")
@@ -93,7 +115,7 @@ def test_no_selection_shows_guidance_instead_of_results():
 
 
 def test_changing_the_gasoline_price_changes_gasoline_costs_only():
-    baseline = run_app(shortlist_initialized=True, shortlist=["epa-48493"])
+    baseline = run_app(shortlist_initialized=True, shortlist=[GASOLINE_CAR])
     before = baseline.dataframe[0].value.iloc[0]
 
     app = baseline.number_input(key="gasoline_price").set_value(6.0).run()
@@ -105,7 +127,7 @@ def test_changing_the_gasoline_price_changes_gasoline_costs_only():
 
 
 def test_changing_the_electricity_price_changes_electric_costs():
-    baseline = run_app(shortlist_initialized=True, shortlist=["epa-48765"])
+    baseline = run_app(shortlist_initialized=True, shortlist=[ELECTRIC_CAR])
     before = baseline.dataframe[0].value.iloc[0]
 
     app = baseline.number_input(key="electricity_price").set_value(0.40).run()
@@ -116,7 +138,7 @@ def test_changing_the_electricity_price_changes_electric_costs():
 
 
 def test_changing_annual_mileage_changes_energy_and_cost_per_mile():
-    baseline = run_app(shortlist_initialized=True, shortlist=["epa-48493"])
+    baseline = run_app(shortlist_initialized=True, shortlist=[GASOLINE_CAR])
     before = baseline.dataframe[0].value.iloc[0]
 
     app = baseline.number_input(key="annual_miles").set_value(24_000).run()
@@ -127,7 +149,7 @@ def test_changing_annual_mileage_changes_energy_and_cost_per_mile():
 
 
 def test_changing_the_apr_changes_financing_interest():
-    baseline = run_app(shortlist_initialized=True, shortlist=["epa-48493"])
+    baseline = run_app(shortlist_initialized=True, shortlist=[GASOLINE_CAR])
     before = baseline.dataframe[0].value.iloc[0]
 
     app = baseline.number_input(key="apr_percent").set_value(0.0).run()
@@ -138,7 +160,7 @@ def test_changing_the_apr_changes_financing_interest():
 
 
 def test_changing_the_ownership_period_changes_annualized_cost():
-    baseline = run_app(shortlist_initialized=True, shortlist=["epa-48493"])
+    baseline = run_app(shortlist_initialized=True, shortlist=[GASOLINE_CAR])
     before = baseline.dataframe[0].value.iloc[0]
 
     app = baseline.slider(key="ownership_years").set_value(10).run()
@@ -149,7 +171,7 @@ def test_changing_the_ownership_period_changes_annualized_cost():
 
 
 def test_a_down_payment_above_the_purchase_price_reports_an_error():
-    app = run_app(shortlist_initialized=True, shortlist=["epa-48493"])
+    app = run_app(shortlist_initialized=True, shortlist=[GASOLINE_CAR])
     app = app.number_input(key="down_payment").set_value(120_000.0).run()
     assert not app.exception
     assert app.error
@@ -157,7 +179,7 @@ def test_a_down_payment_above_the_purchase_price_reports_an_error():
 
 
 def test_the_sales_tax_override_changes_the_tax_charged():
-    baseline = run_app(shortlist_initialized=True, shortlist=["epa-48493"])
+    baseline = run_app(shortlist_initialized=True, shortlist=[GASOLINE_CAR])
     before = baseline.dataframe[0].value.iloc[0]
 
     app = baseline.toggle(key="use_tax_override").set_value(True).run()
@@ -169,15 +191,15 @@ def test_the_sales_tax_override_changes_the_tax_charged():
 
 
 def test_an_unknown_zip_code_warns_without_crashing():
-    app = run_app(shortlist_initialized=True, shortlist=["epa-48493"])
+    app = run_app(shortlist_initialized=True, shortlist=[GASOLINE_CAR])
     app = app.text_input(key="zip_code").set_value("00000").run()
     assert not app.exception
     assert any("ZIP" in item.value for item in [*app.caption, *app.warning])
 
 
 def test_a_filter_change_drops_an_unavailable_selection_and_says_so():
-    app = run_app(shortlist_initialized=True, shortlist=["epa-48765"])
+    app = run_app(shortlist_initialized=True, shortlist=[ELECTRIC_CAR])
     app = app.multiselect(key="filter_segment").select("Pickup").run()
     assert not app.exception
     assert any("Removed from the comparison" in item.value for item in app.info)
-    assert "epa-48765" not in app.session_state["shortlist"]
+    assert ELECTRIC_CAR not in app.session_state["shortlist"]
