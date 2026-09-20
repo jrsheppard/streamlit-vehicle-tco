@@ -8,6 +8,7 @@ from tco.assumptions import (
     read_field_provenance,
     build_vehicle_assumptions,
     comparison_readiness,
+    latest_model_year_rows,
     merge_with_epa,
     parse_uploaded_catalog,
     validate_catalog,
@@ -253,6 +254,23 @@ def test_catalog_values_win_over_epa_values():
     merged = merge_with_epa(validate_catalog(catalog()).frame, EPA)
     assert merged.iloc[0]["effective_mpg"] == pytest.approx(35.0)
     assert merged.iloc[0]["mpg_origin"] == "Catalog"
+
+
+def test_latest_model_year_rows_keeps_newest_year_per_powertrain():
+    frame = catalog(
+        BASE_ROW,
+        {**BASE_ROW, "vehicle_id": "v2", "model_year": 2026},
+        {
+            **BASE_ROW,
+            "vehicle_id": "v3",
+            "model_year": 2025,
+            "powertrain": HEV,
+        },
+    )
+
+    latest = latest_model_year_rows(frame)
+
+    assert latest["vehicle_id"].tolist() == ["v2", "v3"]
 
 
 def test_unknown_specifications_leave_a_vehicle_incomplete():

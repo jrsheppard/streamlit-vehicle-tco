@@ -570,6 +570,16 @@ def merge_with_epa(
     return merged
 
 
+def latest_model_year_rows(frame: pd.DataFrame) -> pd.DataFrame:
+    """Keep the newest row for each model, trim, and powertrain combination."""
+    identity = ["make", "model", "trim", "powertrain"]
+    return (
+        frame.sort_values("model_year", ascending=False, na_position="last")
+        .drop_duplicates(subset=identity, keep="first")
+        .reset_index(drop=True)
+    )
+
+
 SPEC_FIELDS: dict[str, tuple[str, str, str]] = {    "effective_mpg": ("mpg_origin", "MPG", "Combined gasoline efficiency"),
     "effective_kwh_per_100mi": (
         "kwh_origin",

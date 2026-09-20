@@ -17,6 +17,7 @@ from tco.assumptions import (
     build_field_provenance,
     build_vehicle_assumptions,
     comparison_readiness,
+    latest_model_year_rows,
     merge_with_epa,
     parse_uploaded_catalog,
     validate_catalog,
@@ -120,7 +121,9 @@ if st.session_state.active_catalog is None:
 catalog = st.session_state.active_catalog
 group_lookup = brand_group_map(brand_groups)
 
-merged = comparison_readiness(merge_with_epa(catalog, epa_catalog_frame))
+merged = latest_model_year_rows(
+    comparison_readiness(merge_with_epa(catalog, epa_catalog_frame))
+)
 merged["brand_group"] = [
     group
     if isinstance(group, str) and group.strip()
@@ -129,6 +132,10 @@ merged["brand_group"] = [
 ]
 merged["body_segment"] = merged["body_segment"].fillna(UNCLASSIFIED)
 label_by_id = dict(zip(merged["vehicle_id"], merged["vehicle_label"]))
+dropdown_label_by_id = {
+    row.vehicle_id: f"{row.vehicle_label} ({row.powertrain})"
+    for row in merged.itertuples()
+}
 
 
 def sanitize_selection(key: str, options: list) -> list:
@@ -411,7 +418,7 @@ if not st.session_state.shortlist_initialized and available_ids:
 shortlist = st.multiselect(
     f"Shortlist (up to {MAX_SHORTLIST} comparison-ready vehicles)",
     options=available_ids,
-    format_func=lambda item: label_by_id.get(item, item),
+    format_func=lambda item: dropdown_label_by_id.get(item, item),
     max_selections=MAX_SHORTLIST,
     key="shortlist",
     help=f"{len(available_ids):,} vehicles match the current filters. Type to search.",

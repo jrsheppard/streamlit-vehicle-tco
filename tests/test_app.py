@@ -12,7 +12,11 @@ import pandas as pd
 import pytest
 from streamlit.testing.v1 import AppTest
 
-from tco.assumptions import CATALOG_COLUMNS, coerce_catalog_dtypes
+from tco.assumptions import (
+    CATALOG_COLUMNS,
+    coerce_catalog_dtypes,
+    latest_model_year_rows,
+)
 from tco.paths import COST_ASSUMPTIONS_PATH
 
 APP = str(Path(__file__).resolve().parent.parent / "streamlit_app.py")
@@ -30,7 +34,7 @@ def vehicle_id(make: str, model: str, powertrain: str, drive: str) -> str:
         & CATALOG["purchase_price_usd"].notna()
     ]
     assert not rows.empty, f"no priced catalog row for {make} {model} {powertrain}"
-    return str(rows.sort_values("model_year").iloc[0]["vehicle_id"])
+    return str(rows.sort_values("model_year", ascending=False).iloc[0]["vehicle_id"])
 
 
 GASOLINE_CAR = vehicle_id("Toyota", "Corolla", "Gasoline", "Front-Wheel Drive")
@@ -72,6 +76,29 @@ def test_filtering_by_powertrain_limits_the_options():
     assert not any("Corolla" in label for label in options)
 
 
+def test_shortlist_offers_only_the_latest_year_with_unique_labels():
+    app = run_app(shortlist_initialized=True, shortlist=[])
+    options = app.multiselect(key="shortlist").options
+    latest = latest_model_year_rows(CATALOG)
+    expected = {
+        " ".join(
+            [
+                str(int(row.model_year)),
+                str(row.make),
+                str(row.model),
+                "" if pd.isna(row.trim) else str(row.trim),
+            ]
+        ).strip()
+        + f" ({row.powertrain})"
+        for row in latest.itertuples()
+        if pd.notna(row.purchase_price_usd)
+    }
+
+    assert not app.exception
+    assert len(options) == len(set(options))
+    assert set(options) <= expected
+
+
 def test_filtering_by_segment_narrows_the_options():
     app = run_app(
         filter_segment=["Pickup"],
@@ -105,7 +132,10 @@ def test_selecting_a_shortlist_updates_the_comparison():
     app = run_app(shortlist_initialized=True, shortlist=[ELECTRIC_CAR])
     assert not app.exception
     assert len(app.dataframe[0].value) == 1
-    assert app.dataframe[0].value.iloc[0]["label"].startswith("2025 Tesla Model 3")
+    assert app.dataframe[0].value.iloc[0]["label"].startswith(
+        f"{CATALOG.loc[CATALOG['vehicle_id'] == ELECTRIC_CAR, 'model_year'].iloc[0]} "
+        "Tesla Model 3"
+    )
 
 
 def test_no_selection_shows_guidance_instead_of_results():
