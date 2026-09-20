@@ -7,6 +7,8 @@ user interface.
 
 from __future__ import annotations
 
+import math
+
 import pandas as pd
 import streamlit as st
 
@@ -56,7 +58,9 @@ DEFAULT_STATE: dict[str, object] = {
     "filter_segment": [],
     "filter_brand_group": [],
     "filter_make": [],
+    "filter_trim": [],
     "filter_year": [],
+    "filter_price_range": None,
     "gasoline_price": 3.30,
     "electricity_price": 0.17,
     "annual_miles": 12000,
@@ -75,6 +79,7 @@ DEFAULT_STATE: dict[str, object] = {
     "use_insurance_override": False,
     "insurance_override": 2000.0,
     "cost_view": "Economic cost",
+    "include_capital_costs": True,
     "epa_matches": None,
 }
 for key, value in DEFAULT_STATE.items():
@@ -145,15 +150,32 @@ def sanitize_selection(key: str, options: list) -> list:
     return current
 
 
+def sanitize_price_range(key: str, minimum: int, maximum: int) -> tuple[int, int]:
+    """Keep a stored price range valid as upstream filters change its bounds."""
+    current = st.session_state.get(key)
+    if (
+        not isinstance(current, (list, tuple))
+        or len(current) != 2
+        or current[0] < minimum
+        or current[1] > maximum
+        or current[0] > current[1]
+    ):
+        current = (minimum, maximum)
+    st.session_state[key] = tuple(int(value) for value in current)
+    return st.session_state[key]
+
+
 def reset_filters() -> None:
     for key in (
         "filter_powertrain",
         "filter_segment",
         "filter_brand_group",
         "filter_make",
+        "filter_trim",
         "filter_year",
     ):
         st.session_state[key] = []
+    st.session_state.filter_price_range = None
 
 
 # --------------------------------------------------------------------------- #
@@ -202,6 +224,12 @@ with st.sidebar:
     if selected_makes:
         filtered = filtered[filtered["make"].isin(selected_makes)]
 
+    trim_options = sorted(filtered["trim"].dropna().unique().tolist())
+    sanitize_selection("filter_trim", trim_options)
+    selected_trims = st.multiselect("Trim", trim_options, key="filter_trim")
+    if selected_trims:
+        filtered = filtered[filtered["trim"].isin(selected_trims)]
+
     year_options = sorted(
         int(year) for year in filtered["model_year"].dropna().unique().tolist()
     )
@@ -209,6 +237,30 @@ with st.sidebar:
     selected_years = st.multiselect("Model year", year_options, key="filter_year")
     if selected_years:
         filtered = filtered[filtered["model_year"].isin(selected_years)]
+
+    available_prices = filtered["purchase_price_usd"].dropna()
+    if not available_prices.empty:
+        minimum_price = math.floor(float(available_prices.min()) / 1_000) * 1_000
+        maximum_price = math.ceil(float(available_prices.max()) / 1_000) * 1_000
+        if maximum_price == minimum_price:
+            maximum_price += 1_000
+        full_price_range = (minimum_price, maximum_price)
+        sanitize_price_range("filter_price_range", *full_price_range)
+        selected_price_range = st.slider(
+            "Purchase price range",
+            min_value=minimum_price,
+            max_value=maximum_price,
+            step=1_000,
+            format="$%d",
+            key="filter_price_range",
+        )
+        if selected_price_range != full_price_range:
+            filtered = filtered[
+                filtered["purchase_price_usd"].between(*selected_price_range)
+            ]
+    else:
+        st.session_state.filter_price_range = None
+        st.caption("Purchase price unavailable for the current filters.")
 
     st.button(
         "Reset filters",
@@ -503,6 +555,16 @@ order = [result.label for result in results]
 comparison = results_to_frame(results)
 cheapest, priciest = results[0], results[-1]
 
+ranking_results = []
+ranking_error_count = 0
+for _, row in ready.iterrows():
+    vehicle_id = str(row["vehicle_id"])
+    try:
+        vehicle = build_vehicle_assumptions(row, overrides_by_vehicle.get(vehicle_id))
+        ranking_results.append(compute_tco(vehicle, global_assumptions))
+    except (EnergyInputError, ValueError):
+        ranking_error_count += 1
+
 # --------------------------------------------------------------------------- #
 # Headline metrics
 # --------------------------------------------------------------------------- #
@@ -674,6 +736,65 @@ with trend_column:
                 "Cumulative economic cost. Crossing lines show where a more "
                 "expensive purchase catches up through lower running costs."
             )
+
+st.subheader("Cost rankings")
+st.toggle(
+    "Include capital costs in ranking",
+    key="include_capital_costs",
+    help=(
+        "Turn this off to rank vehicles using only ongoing operating costs. The "
+        "comparison results above keep their full economic TCO."
+    ),
+)
+st.caption(
+    "Capital costs include depreciation, financing interest, sales tax, and "
+    "purchase fees"
+    + (
+        "."
+        if st.session_state.include_capital_costs
+        else " and are excluded from these rankings."
+    )
+    + " Operating costs include energy, maintenance, insurance, and recurring "
+    "registration fees. "
+    f"Ranked across {len(ranking_results):,} comparison-ready vehicle(s) matching "
+    "the current filters."
+)
+if ranking_error_count:
+    st.caption(
+        f"Excluded {ranking_error_count:,} matching vehicle(s) that could not be "
+        "calculated with the active assumptions."
+    )
+
+if ranking_results:
+    expensive_ranking = charts.ranked_cost_frame(
+        ranking_results,
+        most_expensive=True,
+        include_capital_costs=bool(st.session_state.include_capital_costs),
+    )
+    inexpensive_ranking = charts.ranked_cost_frame(
+        ranking_results,
+        most_expensive=False,
+        include_capital_costs=bool(st.session_state.include_capital_costs),
+    )
+    with st.container(border=True):
+        st.markdown("**Top 10 most expensive cars to drive**")
+        st.altair_chart(
+            charts.ranked_cost_chart(
+                expensive_ranking, global_assumptions.ownership_years
+            )
+        )
+    with st.container(border=True):
+        st.markdown("**Top 10 least expensive cars to drive**")
+        st.altair_chart(
+            charts.ranked_cost_chart(
+                inexpensive_ranking, global_assumptions.ownership_years
+            )
+        )
+else:
+    st.info(
+        "No matching vehicles can be ranked with the active assumptions.",
+        icon=":material/info:",
+    )
 
 # --------------------------------------------------------------------------- #
 # Specifications
@@ -1212,6 +1333,19 @@ Catalog maintenance is stated at the {MAINTENANCE_REFERENCE_MILES:,.0f} mi/yr ba
 publishes. Service intervals are partly time-based and partly distance-based, so
 half of the figure is held fixed and half scales with the miles actually driven.
 Insurance, registration, and depreciation do not scale with mileage.
+
+**Capital and operating cost rankings**
+
+```text
+capital costs   = sales tax + purchase fees + depreciation + financing interest
+operating costs = energy + maintenance + insurance + recurring registration fees
+```
+
+The ranking toggle removes all capital costs when off, including sales tax and
+purchase fees. Registration remains an operating cost because it recurs during
+ownership. The toggle changes only the two catalog-wide rankings, not the
+comparison table, headline metrics, component chart, cumulative chart, or
+engine-computed economic TCO.
 
 **Fractional years** - the ownership period is constrained to whole years, so
 every annual figure covers a complete year.

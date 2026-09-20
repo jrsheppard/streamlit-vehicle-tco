@@ -42,6 +42,9 @@ COMPONENT_PALETTE: tuple[str, ...] = (
     "#332288",
 )
 
+COST_CATEGORY_ORDER: tuple[str, ...] = ("Capital costs", "Operating costs")
+COST_CATEGORY_PALETTE: tuple[str, ...] = ("#0072B2", "#E69F00")
+
 CURRENCY_FORMAT = "$,.0f"
 
 
@@ -88,6 +91,48 @@ def cost_breakdown_chart(
             ],
         )
         .properties(height=340)
+    )
+
+
+def ranked_cost_chart(frame: pd.DataFrame, ownership_years: int) -> alt.Chart:
+    """Horizontal capital-versus-operating bars for one vehicle ranking."""
+    vehicle_count = frame["vehicle_id"].nunique()
+    return (
+        alt.Chart(frame)
+        .mark_bar()
+        .encode(
+            x=alt.X(
+                "amount:Q",
+                title=f"Cost over {ownership_years} years (USD)",
+                stack="zero",
+                scale=alt.Scale(zero=True),
+                axis=alt.Axis(format=CURRENCY_FORMAT),
+            ),
+            y=alt.Y(
+                "label:N",
+                title=None,
+                sort=alt.SortField(field="rank", order="ascending"),
+                axis=alt.Axis(labelLimit=280),
+            ),
+            color=alt.Color(
+                "category:N",
+                title="Cost category",
+                sort=list(COST_CATEGORY_ORDER),
+                scale=alt.Scale(
+                    domain=list(COST_CATEGORY_ORDER),
+                    range=list(COST_CATEGORY_PALETTE),
+                ),
+            ),
+            order=alt.Order("category_rank:Q"),
+            tooltip=[
+                alt.Tooltip("label:N", title="Vehicle"),
+                alt.Tooltip("category:N", title="Cost category"),
+                alt.Tooltip("amount:Q", title="Cost", format="$,.0f"),
+                alt.Tooltip("displayed_total:Q", title="Ranked total", format="$,.0f"),
+                alt.Tooltip("share:Q", title="Share of ranked total", format=".1%"),
+            ],
+        )
+        .properties(height=max(260, vehicle_count * 38))
     )
 
 
@@ -169,6 +214,73 @@ def breakdown_frame(results: list) -> pd.DataFrame:
                     "component_rank": ranks.get(component, len(ranks)),
                     "amount": amount,
                     "share": amount / total,
+                }
+            )
+    return pd.DataFrame(rows)
+
+
+def ranked_cost_frame(
+    results: list,
+    *,
+    most_expensive: bool,
+    include_capital_costs: bool,
+    limit: int = 10,
+) -> pd.DataFrame:
+    """Build capital and operating rows for one top or bottom cost ranking."""
+    ranked: list[dict[str, object]] = []
+    for result in results:
+        capital = 0.0
+        if include_capital_costs:
+            capital = (
+                result.depreciation
+                + result.total_financing_interest
+                + result.sales_tax
+                + result.purchase_fees
+            )
+        operating = (
+            result.total_energy_cost
+            + result.total_maintenance_cost
+            + result.total_insurance_cost
+            + result.total_registration_cost
+        )
+        ranked.append(
+            {
+                "vehicle_id": result.vehicle_id,
+                "label": f"{result.label} ({result.powertrain})",
+                "capital": capital,
+                "operating": operating,
+                "displayed_total": capital + operating,
+            }
+        )
+
+    ranked.sort(
+        key=lambda item: (
+            -float(item["displayed_total"])
+            if most_expensive
+            else float(item["displayed_total"]),
+            str(item["label"]),
+            str(item["vehicle_id"]),
+        )
+    )
+    rows: list[dict[str, object]] = []
+    for rank, item in enumerate(ranked[:limit]):
+        total = float(item["displayed_total"])
+        for category_rank, (category, amount) in enumerate(
+            (
+                ("Capital costs", float(item["capital"])),
+                ("Operating costs", float(item["operating"])),
+            )
+        ):
+            rows.append(
+                {
+                    "vehicle_id": item["vehicle_id"],
+                    "label": item["label"],
+                    "category": category,
+                    "category_rank": category_rank,
+                    "amount": amount,
+                    "displayed_total": total,
+                    "share": amount / total if total else 0.0,
+                    "rank": rank,
                 }
             )
     return pd.DataFrame(rows)

@@ -104,7 +104,7 @@ def test_page_renders_without_overflow_or_exceptions(app_server, browser, viewpo
         page.wait_for_selector(
             "[data-testid='stVegaLiteChart'] :is(svg, canvas)", timeout=60_000
         )
-        assert page.locator("[data-testid='stVegaLiteChart']").count() >= 2
+        assert page.locator("[data-testid='stVegaLiteChart']").count() >= 4
         assert page.locator("[data-testid='stMetric']").count() >= 5
         marks = page.evaluate(
             "() => document.querySelectorAll(\"[data-testid='stVegaLiteChart'] svg path,"
@@ -122,6 +122,15 @@ def test_page_renders_without_overflow_or_exceptions(app_server, browser, viewpo
         assert chart_box["width"] > 100
         assert chart_box["height"] > 100
         assert chart_box["x"] + chart_box["width"] <= viewport["width"] + 2
+
+        ranking_charts = page.locator("[data-testid='stVegaLiteChart']").all()[-2:]
+        assert len(ranking_charts) == 2
+        for ranking_chart in ranking_charts:
+            ranking_box = ranking_chart.bounding_box()
+            assert ranking_box is not None
+            assert ranking_box["width"] > 100
+            assert ranking_box["height"] > 100
+            assert ranking_box["x"] + ranking_box["width"] <= viewport["width"] + 2
 
         table_box = page.locator("[data-testid='stDataFrame']").first.bounding_box()
         assert table_box is not None

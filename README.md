@@ -9,8 +9,8 @@ traces back to a visible formula and an editable assumption.
 
 ## Run it
 
-Python 3.11 or newer is required; the pinned Streamlit and pandas versions do not
-support 3.9 or 3.10.
+Python 3.11 or newer is required by the pinned dependencies. Python 3.11 is the
+tested development and deployment version.
 
 ```bash
 venv/bin/python -m pip install -r requirements.txt
@@ -27,8 +27,9 @@ the root and every data file the app needs is committed.
 1. Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub.
 2. Create an app from this repository, branch `main`, main file
    `streamlit_app.py`.
-3. **In Advanced settings, set the Python version to 3.11 or newer.** The default
-   may be older, and the pinned dependencies will fail to install on it.
+3. **In Advanced settings, set the Python version to 3.11.** Community Cloud's
+  default can change over time; selecting 3.11 keeps deployment aligned with the
+  tested environment and the repository's devcontainer.
 
 No secrets are required.
 
@@ -48,7 +49,11 @@ No secrets are required.
 
 ## Data sources and the refresh step
 
+Data refreshes and model rebuilding use maintenance-only packages that are kept
+out of the hosted app. Install `requirements-dev.txt` before running these tools.
+
 ```bash
+venv/bin/python -m pip install -r requirements-dev.txt
 venv/bin/python -m scripts.refresh_data             # all sources
 venv/bin/python -m scripts.refresh_data --source epa
 ```

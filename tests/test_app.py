@@ -7,6 +7,7 @@ layout, so those are covered by unit tests and the browser smoke test instead.
 from __future__ import annotations
 
 from pathlib import Path
+import re
 
 import pandas as pd
 import pytest
@@ -52,12 +53,58 @@ def metric_labels(app: AppTest) -> list[str]:
     return [item.label for item in app.metric]
 
 
+def ranking_candidate_count(app: AppTest) -> int:
+    caption = next(
+        item.value
+        for item in app.caption
+        if "comparison-ready vehicle(s) matching" in item.value
+    )
+    match = re.search(r"Ranked across ([\d,]+)", caption)
+    assert match
+    return int(match.group(1).replace(",", ""))
+
+
 def test_default_render_succeeds():
     app = run_app()
     assert not app.exception
     assert app.title[0].value == "Vehicle total cost of ownership"
     assert "Lowest total cost" in metric_labels(app)
     assert len(app.session_state["shortlist"]) == 4
+
+
+def test_cost_rankings_render_for_filtered_catalog():
+    app = run_app()
+    markdown = [item.value for item in app.markdown]
+
+    assert not app.exception
+    assert "**Top 10 most expensive cars to drive**" in markdown
+    assert "**Top 10 least expensive cars to drive**" in markdown
+    assert len(app.get("vega_lite_chart")) == 4
+    assert app.toggle(key="include_capital_costs").value is True
+    assert ranking_candidate_count(app) > 10
+
+
+def test_ranking_toggle_does_not_change_shortlist_tco():
+    app = run_app()
+    comparison_before = app.dataframe[0].value.copy()
+
+    app = app.toggle(key="include_capital_costs").set_value(False).run()
+    comparison_after = app.dataframe[0].value
+
+    assert not app.exception
+    pd.testing.assert_frame_equal(comparison_after, comparison_before)
+    assert any(
+        "and are excluded from these rankings" in item.value
+        for item in app.caption
+    )
+
+
+def test_cost_rankings_follow_sidebar_filters():
+    unfiltered = run_app()
+    filtered = run_app(filter_powertrain=["BEV"])
+
+    assert not filtered.exception
+    assert 0 < ranking_candidate_count(filtered) < ranking_candidate_count(unfiltered)
 
 
 def test_default_shortlist_spans_multiple_powertrains():
@@ -110,6 +157,47 @@ def test_filtering_by_segment_narrows_the_options():
     assert options
     pickups = set(CATALOG.loc[CATALOG["body_segment"] == "Pickup", "model"])
     assert all(any(model in label for model in pickups) for label in options)
+
+
+def test_filtering_by_trim_narrows_the_options():
+    app = run_app(
+        filter_trim=["Rear-Wheel Drive"],
+        shortlist_initialized=True,
+        shortlist=[],
+    )
+
+    assert not app.exception
+    options = app.multiselect(key="shortlist").options
+    assert options
+    assert all("Rear-Wheel Drive" in label for label in options)
+
+
+def test_filtering_by_purchase_price_limits_the_options():
+    latest = latest_model_year_rows(CATALOG)
+    minimum = int(latest["purchase_price_usd"].min() // 1_000 * 1_000)
+    maximum = 50_000
+    price_by_label = {
+        " ".join(
+            [
+                str(int(row.model_year)),
+                str(row.make),
+                str(row.model),
+                str(row.trim),
+            ]
+        ).strip()
+        + f" ({row.powertrain})": row.purchase_price_usd
+        for row in latest.itertuples()
+    }
+    app = run_app(
+        filter_price_range=(minimum, maximum),
+        shortlist_initialized=True,
+        shortlist=[],
+    )
+
+    assert not app.exception
+    options = app.multiselect(key="shortlist").options
+    assert options
+    assert all(minimum <= price_by_label[label] <= maximum for label in options)
 
 
 def test_filters_narrow_one_another_and_drop_impossible_combinations():
